@@ -59,6 +59,10 @@ if(isset($_POST['lemail'])&&
 <body>
     <div class="container">
 		<h1 class="page-header">Titre</h1>
+    <?php include_once 'menu.php'; ?>
+
+
+
 	<form action="" method="POST" name="envoiemail" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal ">
     
 <div class="row">
