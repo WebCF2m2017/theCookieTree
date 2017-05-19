@@ -16,6 +16,7 @@ require_once '../pages/fonction.php';
 </head>
 <body>
 	<?php
+	include_once '../menu.php';
 		if(isset($_GET['action'])){
 	            // switch du type d'action
 	            switch($_GET['action']){
