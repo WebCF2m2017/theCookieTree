@@ -4,7 +4,6 @@ session_start();
 
 require_once 'pages/connect.php';
 require_once 'pages/fonction.php';
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,6 +27,9 @@ require_once 'pages/fonction.php';
 
 		}elseif(isset($_GET['produits'])){
 			require_once 'pages/produits.php';
+
+		}elseif(isset($_GET['galerie'])){
+			require_once 'pages/galerie.php';
 
 		}else{
 			require_once 'pages/accueil.php';
