@@ -16,6 +16,7 @@ require_once 'pages/fonction.php';
 </head>
 <body>
 	<?php
+	include_once 'menu.php';
 		if(empty($_GET)&&empty($_POST)){
 			require_once 'pages/accueil.php';
 			
