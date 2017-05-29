@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 23 Mai 2017 à 11:55
+-- Généré le :  Lun 29 Mai 2017 à 11:25
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -31,14 +31,6 @@ CREATE TABLE `categ` (
   `types` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `categ`
---
-
-INSERT INTO `categ` (`id`, `types`) VALUES
-(1, 'Gluten free'),
-(2, 'Vegan');
-
 -- --------------------------------------------------------
 
 --
@@ -63,21 +55,6 @@ CREATE TABLE `img` (
   `produits_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `img`
---
-
-INSERT INTO `img` (`id`, `url`, `produits_id`) VALUES
-(2, 'https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/17523371_1883794808545417_5979494171983979335_n.jpg?oh=7b47f34eaf37dd96d9716ba4dc441628&oe=59B9ACC0', 2),
-(3, 'http://www.primrose-bakery.co.uk/shop/content/images/thumbs/0000362_chocolate-layer-cake.jpeg', 3),
-(4, 'http://d2gk7xgygi98cy.cloudfront.net/6527-3-large.jpg', 4),
-(5, 'https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/chocolate-avocado-cake.jpg?itok=E2eWE_Dx', 2),
-(6, 'https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/recipe-collections/collection-image/2013/05/rosewater-raspberry-sponge-cake.jpg?itok=OVpUSQm9', 2),
-(7, 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--364199_12.jpg?itok=SQT-JZQw', 3),
-(8, 'https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/cherrycake_0.jpg?itok=IwvfZchz', 3),
-(9, 'https://i4.fnp.com/images/pr/l/truffle-cake-half-kg_1.jpg', 4),
-(10, 'https://www.patisserie-valerie.co.uk/products/WedWhteCig.jpg', 4);
-
 -- --------------------------------------------------------
 
 --
@@ -90,15 +67,6 @@ CREATE TABLE `produits` (
   `description` varchar(2048) NOT NULL,
   `categ_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `produits`
---
-
-INSERT INTO `produits` (`id`, `titre`, `description`, `categ_id`) VALUES
-(2, 'Gateaux 1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dicta fugiat modi fugit, ex, aspernatur ipsam! Odio, quidem odit ipsa porro nesciunt a! Voluptates ipsum, voluptas sit ea laudantium voluptate.', 1),
-(3, 'Gateaux 2', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dicta fugiat modi fugit, ex, aspernatur ipsam! Odio, quidem odit ipsa porro nesciunt a! Voluptates ipsum, voluptas sit ea laudantium voluptate.', 2),
-(4, 'Gateaux 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dicta fugiat modi fugit, ex, aspernatur ipsam! Odio, quidem odit ipsa porro nesciunt a! Voluptates ipsum, voluptas sit ea laudantium voluptate.', 2);
 
 -- --------------------------------------------------------
 
