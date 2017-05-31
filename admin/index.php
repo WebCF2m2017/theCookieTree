@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../pages/connect.php';
 require_once '../pages/fonction.php';
 
@@ -17,6 +17,11 @@ require_once '../pages/fonction.php';
 <body>
 	<?php
 	include_once '../menu.php';
+	if(!isset($_SESSION['clef_de_session'])){
+    	require_once 'connexion.php';
+	}else{
+    // si la clef est toujours valide
+    if($_SESSION['clef_de_session']== session_id()){
 		if(isset($_GET['action'])){
 	            // switch du type d'action
 	            switch($_GET['action']){
@@ -44,6 +49,8 @@ require_once '../pages/fonction.php';
 	            // appel de l'accueil
 	            require_once 'accueil_admin.php';
 	        }
+	    }
+	}
 	?>
 </body>
 </html>

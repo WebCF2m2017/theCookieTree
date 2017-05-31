@@ -2,6 +2,7 @@
 
 session_start();
 $current_page = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+echo $current_page;
 require_once 'pages/connect.php';
 require_once 'pages/fonction.php';
 ?>
