@@ -12,7 +12,8 @@ if(isset($_POST['lemail'])&&
         
         if($lemail){
           //  $to ='marjolainepapin@gmail.com';
-            $to ='test@hotmail.com';
+            $to ='c180966@mvrht.net';
+            $subject = "aaaaaaaaaaaaaaaaaaaaa";
             $message = "Mail de votre site theCookieTree \r\n";
             $message .= 'Nom: '. $nom .' Prenom: ' .$prenom. "\r\n";
             $message .= "message: \r\n";
@@ -23,7 +24,7 @@ if(isset($_POST['lemail'])&&
                          'X-Mailer: PHP/' . phpversion();
 
 
-            if (mail($to, $message, $headers))
+            if (mail($to, $subject, $message, $headers))
                 $mailsent = '<p> Mail envoyé! </p>';
             else
                die('Error');
@@ -31,7 +32,7 @@ if(isset($_POST['lemail'])&&
         }else{
              $erreur = " <a href='#' class='btn btn-danger' onclick='history.go(-1)'>Retour sur le formulaire</a> <h5>Verifiez tous les champs.</h5>";
         }
-} 
+}
 
 ?>
 

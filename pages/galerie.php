@@ -44,7 +44,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 <html lang="en">
   <head>
       <meta charset="utf-8">
-  <title>Contact</title>
+  <title>Galerie</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
     </div>
 
 <div class="jumbotron">
-  <h3>Gluten free</h3>
+  <h3>Au-delà du blé</h3>
 </div>
 <?php
 
