@@ -58,41 +58,43 @@ if(isset($_POST['lemail'])&&
 </head>
 <body>
     <div class="container">
-		<h1 class="page-header">Titre</h1>
+		<h1 class="page-header">Contact</h1>
     <?php include_once 'menu.php'; ?>
 
 
 
-	<form action="" method="POST" name="envoiemail" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal ">
-    
+	
 <div class="row">
+
+<form action="" method="POST" name="envoiemail" class="col-lg-6 col-lg-offset-2 form-horizontal ">
+
 <div class="form-group">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <label for="prenom">Full Name <span class="required">*</span></label><br />
-    <input type="text" id="prenom" name="prenom" class="nameform form-control field-divided col-lg-6 col-md-6 col-sm-6 col-xs-6" placeholder="First" />
-    <input type="text" name="nom" class="nameform form-control field-divided col-lg-6 col-md-6 col-sm-6 col-xs-6" placeholder="Last" /><br />
+    <label for="prenom">Nom et prénom <span class="required">*</span></label><br />
+    <input type="text" id="prenom" name="prenom" class="nameform form-control field-divided col-lg-6 col-md-6 col-sm-6 col-xs-6" placeholder="Nom" />
+    <input type="text" name="nom" class="nameform form-control field-divided col-lg-6 col-md-6 col-sm-6 col-xs-6" placeholder="Prénom" /><br />
 </div>
 </div>
-</div>
-<div class="row">
+
+
 <div class="form-group">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <label for="lemail">Email <span class="required">*</span></label><br />
-        <input type="email" name="lemail" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12"  /><br />
+        <input type="email" name="lemail" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Email" /><br />
 
 </div>
 </div>
-</div>
-<div class="row">
+
+
 <div class="form-group">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <label>Your Message <span class="required">*</span></label><br />
-        <textarea name="letexte" id="field5" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12"></textarea><br />
+        <label>Votre message <span class="required">*</span></label><br />
+        <textarea name="letexte" id="field5" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Votre message"></textarea><br />
 </div>
 </div>
-</div>
-<div class="row">
+
+
 <div class="btn-group pull-left">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -102,7 +104,19 @@ if(isset($_POST['lemail'])&&
 
 </div>
 </div>
-</div>  
+</form>
+
+<aside class="col-lg-2 col-lg-offset-1 ">
+        <address>
+           <p>Pour me contacter :</p>
+           <strong>Marjolaine Papin</strong><br>
+           +32 (0) 470 82 74 95<br>
+           marjolainepapin@gmail.com
+        </address>
+</aside>
+</div>
+
+
     
     <?php
     if(isset($mailsent)){
@@ -110,7 +124,7 @@ if(isset($_POST['lemail'])&&
     }
     ?>
     
-</form>
+
 </div>
 </body>
 </html>
