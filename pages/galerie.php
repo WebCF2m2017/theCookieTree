@@ -53,6 +53,9 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
     .hehe{
       text-align: center;
     }
+    .haha{
+      margin-top: 5%;
+    }
   </style>
   </head>
   <body>
@@ -62,7 +65,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
     <div class="jumbotron hehe">
       <h2>Galerie</h2>
     </div>
-<div class="row">
+<div class="row col-md-12">
 <div class="jumbotron">
   <h3>Gluten free</h3>
 </div>
@@ -72,7 +75,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 while($gluten = mysqli_fetch_assoc($recup_sql)){
 
     echo " <section class='col-md-12'>";
-    echo "<div class='row' id='galerie'>";
+    echo "<div class='row haha' id='galerie'>";
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
 
 
@@ -100,7 +103,7 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
   ?>
     <!-- end of Gluten free -->
     <!-- start of Vegan -->
-<div class="row">
+<div class="row col-md-12">
 <div class="jumbotron">
   <h3>Vegan</h3>
 </div>
@@ -111,7 +114,7 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
 while($vegan = mysqli_fetch_assoc($recup_sql2)){
 
     echo " <section class='col-md-12'>";
-    echo "<div class='row' id='galerie'>";
+    echo "<div class='row haha' id='galerie'>";
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
 
 
