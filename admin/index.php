@@ -47,7 +47,7 @@ require_once '../pages/fonction.php';
 	            
 	        }else{
 	            // appel de l'accueil
-	            require_once 'accueil_admin.php';
+	            header("Location: ./");
 	        }
 	    }
 	}

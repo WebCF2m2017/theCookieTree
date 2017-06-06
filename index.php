@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-$current_page = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-echo $current_page;
+
 require_once 'pages/connect.php';
 require_once 'pages/fonction.php';
 ?>
@@ -36,6 +35,40 @@ require_once 'pages/fonction.php';
 		}else{
 			require_once 'pages/accueil.php';
 		}
-	?>
+if(!isset($_SESSION['clef_de_session'])){
+    
+}else{
+    // si la clef est toujours valide
+    if($_SESSION['clef_de_session']== session_id()){
+        
+        if(isset($_GET['action'])){
+            // switch du type d'action
+            switch($_GET['action']){
+                // on veut se déconnecter
+                case "deco":
+                    header("Location: admin/disconnect.php");
+                    break;
+                // on veut insérer
+                case "insert":
+                    require_once 'admin/insert.php';
+                    break;
+                // on veut supprimer
+                case "delete":
+                    require_once 'admin/delete.php';
+                    break;
+                // on veut modifier
+                case "update":
+                    require_once 'admin/update.php';
+                    break;
+                default :
+                    header("Location: ./");
+                }
+            }
+        }
+    }
+
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
