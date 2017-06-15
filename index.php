@@ -37,9 +37,7 @@ require_once 'pages/fonction.php';
 
         }elseif(isset($_GET['galerie_vegan'])){
 			require_once 'pages/galerie_vegan.php';
-		}else{
-            require_once 'pages/accueil.php';
-        }
+		}
 if(!isset($_SESSION['clef_de_session'])){
     
 }else{
