@@ -1,0 +1,32 @@
+
+.navbar{
+	background-color:#005D02;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    color:white;
+    background-color:#003D05;
+}
+.nav>li>a, .nav>li>a {
+    color:white;
+    background-color:#005D02;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #003D05;
+    border-color: #337ab7;
+}
+.dropdown-menu {
+   background-color:#005D02; 
+}
+#photobanner{
+	margin: 0 auto;
+}
+.dropdown-menu>li>a {
+    color: white;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: white;
+    background-color: #003D05;
+}
+.container{
+	padding: 0;
+}
