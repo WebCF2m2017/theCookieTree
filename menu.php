@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-		<img id="photobanner" class="img-responsive" src="photo/topbanner.png" alt="top-banner">
+		<img id="photobanner" class="img-responsive" src="photo/topbanner.jpg" alt="top-banner">
 </div>
 
 <?php
