@@ -1,6 +1,16 @@
+.hehe{
+      text-align: center;
+}
+.haha{
+      margin-top: 5%;
+}
 body{
 	background-image: url("../photo/background.jpg");
 }
 .container{
 	background-color: rgba(255,255,255,0.6);
+
+}
+h2{
+	font-family: 'Paytone One', sans-serif;
 }
