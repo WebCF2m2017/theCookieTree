@@ -44,6 +44,7 @@ if(isset($_POST['lemail'])&&
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.contact.css">
         <style type="text/css">
             textarea {
             max-width:100%;
@@ -57,13 +58,11 @@ if(isset($_POST['lemail'])&&
         </style>
 </head>
 <body>
-    <div class="container">
-		<h1 class="page-header">Contact</h1>
     <?php include_once 'menu.php'; ?>
 
 
 
-	
+<div class="container"> 
 <div class="row">
 
 <form action="" method="POST" name="envoiemail" class="col-lg-6 col-lg-offset-2 form-horizontal ">
@@ -94,14 +93,14 @@ if(isset($_POST['lemail'])&&
 </div>
 </div>
 
-
+<div class="row">
 <div class="btn-group pull-left">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <i class="fa fa-paper-plane" aria-hidden="true"></i>
         <input type="submit" class="btn-info btn btn-primary" value="Envoyer l'email"/>
         <?php if(isset($erreur)){echo $erreur;} ?>
-
+</div>
 </div>
 </div>
 </form>
@@ -114,6 +113,8 @@ if(isset($_POST['lemail'])&&
            marjolainepapin@gmail.com
         </address>
 </aside>
+</div>
+
 </div>
 
 
