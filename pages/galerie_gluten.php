@@ -30,22 +30,20 @@ $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <style type="text/css">
-    .hehe{
-      text-align: center;
-    }
+    <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
   </style>
   </head>
   <body>
+
+   <?php include_once 'menu.php'; ?>
+  <div class="container">
   <div class="row">
 
   <section class="col-md-12">
-    <div class="jumbotron hehe">
-      <h2>Galerie</h2>
-    </div>
 
 <div class="jumbotron">
-  <h3>Gluten free</h3>
+  <h2>Gluten free</h2>
 </div>
 <?php
 
@@ -78,6 +76,7 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
   }
       echo "</section>";
   ?>
+  </div>
     <!-- end of Gluten free -->
   </body>
 </html>
