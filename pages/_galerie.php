@@ -39,6 +39,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,6 +48,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
   </head>
@@ -125,7 +127,7 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
                       }else{
               echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
 
-                    echo "<a class='groupe-colorbox' href='{$url[$i]}'><img class='img-responsive img-thumbnail' alt='{$vegan['titre']}' title='{$vegan['titre']}' src='{$url[$i]}'></a>";
+                    echo "<img src='{$url[$i]}' class='img-responsive img-thumbnail' alt='{$vegan['titre']}' title='{$vegan['titre']}'/>";
 
               echo "</div>";
 
@@ -134,8 +136,7 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
   }
       echo "</section>";
   ?>
-  
-     <!--End ov vegan -->
+	 <!--End ov vegan -->
    </div>
   </body>
 </html>
