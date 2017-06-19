@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 31 Mai 2017 à 13:22
+-- Généré le :  Lun 19 Juin 2017 à 12:32
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -63,7 +63,7 @@ CREATE TABLE `img` (
 CREATE TABLE `produits` (
   `id` int(10) UNSIGNED NOT NULL,
   `titre` varchar(80) NOT NULL,
-  `description` varchar(120) NOT NULL,
+  `description` varchar(555) NOT NULL,
   `categ_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -126,7 +126,7 @@ ALTER TABLE `util`
 -- AUTO_INCREMENT pour la table `categ`
 --
 ALTER TABLE `categ`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `droit`
 --
@@ -136,12 +136,12 @@ ALTER TABLE `droit`
 -- AUTO_INCREMENT pour la table `img`
 --
 ALTER TABLE `img`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `util`
 --
