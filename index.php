@@ -29,8 +29,8 @@ require_once 'pages/fonction.php';
 		}elseif(isset($_GET['produits'])){
 			require_once 'pages/produits.php';
 
-		}elseif(isset($_GET['galerie'])){
-			require_once 'pages/galerie.php';
+		}elseif(isset($_GET['commande'])){
+			require_once 'pages/commande.php';
 
 		}elseif(isset($_GET['galerie_gluten'])){
             require_once 'pages/galerie_gluten.php';

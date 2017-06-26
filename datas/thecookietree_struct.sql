@@ -33,8 +33,8 @@ DROP TABLE IF EXISTS `theCookieTree`.`Produits` ;
 
 CREATE TABLE IF NOT EXISTS `theCookieTree`.`Produits` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `titre` VARCHAR(80) NOT NULL,
-  `description` VARCHAR(120) NOT NULL,
+  `titre` VARCHAR(100) NOT NULL,
+  `description` VARCHAR(3000) NOT NULL,
   `categ_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Produits_categ1_idx` (`categ_id` ASC),

@@ -27,7 +27,7 @@
 					</ul>
 				</li>
 				<li><a href="?contact">Contact</a></li>
-				<li><a href="?galerie">Galerie</a></li>
+				<li><a href="?commande">Commande</a>
 				<li><a href="/admin/">Connexion</a></li>
 			</ul>
 			</nav>
@@ -50,7 +50,7 @@
 						</ul>
 					</li>
 					<li><a href="?contact">Contact</a></li>
-					<li><a href="?galerie">Galerie</a></li>
+					<li><a href="?commande">Commande</a>
 					<li><a href="?action=insert">Insertion</a></li>
 					<li><a href="?action=deco">Deconnexion</a></li>
 				</ul>
