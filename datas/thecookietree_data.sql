@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 19 Juin 2017 à 12:33
+-- Généré le :  Lun 26 Juin 2017 à 12:18
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -33,32 +33,32 @@ INSERT INTO `categ` (`id`, `types`) VALUES
 --
 
 INSERT INTO `img` (`id`, `url`, `Produits_id`) VALUES
-(1, 'https://www.cbdcakes.com.au/files/2016/04/CBD_CaramelTorte.jpg', 1),
-(2, 'http://us2guntur.com/images//10005img/CAKCON246_B_010314.jpg', 1),
-(3, 'https://www.cbdcakes.com.au/files/2016/04/cbdcakes_traditionalmud.jpg', 1),
-(4, 'https://www.cbdcakes.com.au/files/2016/04/CBD_MousseCakesBW.jpg', 2),
-(5, 'http://www.thevelvetcakeco.com/wp-content/uploads/2016/04/Carrot-800x800-Naked-400x400.jpg', 2),
-(6, 'https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2097_20Web_400_SCR_CheeseburgerCake.png', 2),
-(7, 'https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/DesktopImages/7862.jpg?ext=.jpg', 3),
-(8, 'http://hangoutcakes.com/image/cache/data/wedding-cream/84-wtc-cc-5kg-cakes-400x400.jpg', 3),
-(9, 'http://www.floraindia.com/pictures/99a.png', 3),
-(10, 'https://d24pyncn3hxs0c.cloudfront.net/sites/default/files/styles/uc_product_full/public/Strawberry-Cake-Half-Kg-Floweraura.jpg?itok=qdX54EcX', 4),
-(11, 'https://financierpatisserie.com/files/919f544c02480d460ed89a97a4c48baa_thumbnail_square.jpg', 4),
-(12, 'https://www.meals.com/imagesrecipes/30066x400.jpg', 4),
-(13, 'http://www.thevelvetcakeco.com/wp-content/uploads/2016/04/Hummingbird-800x800-Naked-400x400.jpg', 5),
-(14, 'http://cinottisbakery.com/wp-content/uploads/2015/11/Baby-Shower-Cake-Baby-butt-mommy-to-be-Pastel-pink-blue-Cinottis-Bakery-buttercream-icing-fondant-400x400.jpg', 5),
-(15, 'https://d1xs5fw35mbn8b.cloudfront.net/p/m/p-round-black-forest-cake-half-kg--13461-m.jpg?v=1497662497000', 5);
+(1, 'https://i2.wp.com/www.sippitysup.com/wp-content/uploads/drupal-images/plumtorteweb_0.jpg?fit=400%2C400&ssl=1', 1),
+(2, 'https://irp-cdn.multiscreensite.com/3dd67886/dms3rep/multi/mobile/dolcetto-patisserie-and-cafe-tortes-and-gateaux-pic05-400x400.jpg', 1),
+(3, 'https://irp-cdn.multiscreensite.com/3dd67886/dms3rep/multi/mobile/dolcetto-patisserie-and-cafe-tortes-and-gateaux-pic09-400x400.jpg', 1),
+(4, 'http://www.auxdelicesdupalais.net/wp-content/uploads/2017/06/G%C3%A2teaux-Aid-2017-modernes-et-traditionnels.jpg', 2),
+(5, 'https://cdn.shopify.com/s/files/1/0317/5261/products/pinata_large.png?v=1456870088', 2),
+(6, 'https://www.metro.ca/userfiles/image/recipes/gateaux-miniatures-au-mascarpone-10254.jpg', 2),
+(7, 'http://www.algerlablanche.com/cuisine/images/mchekla.jpg', 3),
+(8, 'https://irp-cdn.multiscreensite.com/3dd67886/dms3rep/multi/mobile/dolcetto-patisserie-and-cafe-tortes-and-gateaux-pic12-400x400.jpg', 3),
+(9, 'https://irp-cdn.multiscreensite.com/3dd67886/dms3rep/multi/mobile/dolcetto-patisserie-and-cafe-tortes-and-gateaux-pic03-400x400.jpg', 3),
+(10, 'https://www.metro.ca/userfiles/image/recipes/Mini-gateaux-9.jpg', 4),
+(11, 'http://www.lechefuniforms.com/galleria/img/w_Mini-gateaux-2.jpg', 4),
+(12, 'https://www.metro.ca/userfiles/image/recipes/gateau-sans-farine-caramel-dattes-noisettes-lindt-6590.jpg', 4),
+(13, 'http://www.lechefuniforms.com/galleria/img/w_Gateaux-Francaise.jpg', 5),
+(14, 'http://www.algerlablanche.com/thematiques/images/cuisine/kefta.jpg', 5),
+(15, 'https://www.metro.ca/userfiles/image/recipes/petits-gateaux-amandes-5267.jpg', 5);
 
 --
 -- Contenu de la table `produits`
 --
 
 INSERT INTO `produits` (`id`, `titre`, `description`, `categ_id`) VALUES
-(1, 'gateaux 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 1),
-(2, 'gateaux 2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 1),
-(3, 'gateaux 3', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 1),
-(4, 'gateaux 4', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 2),
-(5, 'gateaux 5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 2);
+(1, 'Gateaux 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 1),
+(2, 'Gateaux 2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 2),
+(3, 'Gateaux 3', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 1),
+(4, 'Gateaux 4', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 2),
+(5, 'Gateaux 5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
