@@ -8,6 +8,7 @@ require_once 'pages/fonction.php';
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title></title>
 	<meta charset="utf-8">
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,7 +17,6 @@ require_once 'pages/fonction.php';
 </head>
 <body>
 	<?php
-	include_once 'menu.php';
 		if(empty($_GET)&&empty($_POST)){
 			require_once 'pages/accueil.php';
 			
@@ -32,8 +32,11 @@ require_once 'pages/fonction.php';
 		}elseif(isset($_GET['galerie'])){
 			require_once 'pages/galerie.php';
 
-		}else{
-			require_once 'pages/accueil.php';
+		}elseif(isset($_GET['galerie_gluten'])){
+            require_once 'pages/galerie_gluten.php';
+
+        }elseif(isset($_GET['galerie_vegan'])){
+			require_once 'pages/galerie_vegan.php';
 		}
 if(!isset($_SESSION['clef_de_session'])){
     
