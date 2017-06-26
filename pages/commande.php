@@ -18,7 +18,6 @@ $sql = "SELECT i.produits_id, p.categ_id, p.description, p.titre, c.types, GROUP
 $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
 
 
-
 //------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------
@@ -37,6 +36,25 @@ $sql2 = "SELECT i.produits_id, p.categ_id, p.description, p.titre, c.types, GROU
 
 $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 
+//-----------------------------------------------------
+
+$sql3 = "SELECT u.login, u.nomentreprise as nom, u.mail
+    FROM util u   
+    WHERE u.id = 1
+    ;";
+
+$recup_sql3 = mysqli_query($db, $sql3)or die(mysqli_error($db));
+
+
+//----------------------------------
+
+$sql4 = "SELECT p.id as product_id, p.titre, c.id, c.types
+    FROM produits p    
+      INNER JOIN categ c 
+    ON c.id = p.categ_id
+    ;";
+
+$recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
 
 ?>
 <!DOCTYPE html>
@@ -51,91 +69,98 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
   </head>
   <body>
-   <?php include_once 'menu.php'; ?>
+   <?php include_once 'menu.php'; 
+        while($util = mysqli_fetch_assoc($recup_sql3)){
+   ?>
    <div class="container">
-  <div class="row">
-
-  <section class="col-md-12">
-<div class="row col-md-12">
-<div class="jumbotron">
-  <h2>Au dela du blé</h2>
-</div>
-</div>
-
-
-<?php
-
-while($gluten = mysqli_fetch_assoc($recup_sql)){
-
-    echo " <section class='col-md-12'>";
-    echo "<div class='row haha' id='galerie'>";
-    echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
-
-
-    echo "<h3>{$gluten['titre']}</h3>";
-    echo "<p>{$gluten['description']}</p>";
-
-    echo "</div>";
-                    $url = explode("|||",$gluten['iurl']);
-                
-                    for ($i=0; $i<count($url);$i++){
-                      if(empty($url[$i])){
-
-                        echo "";
-
-                      }else{
-              echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
-
-                    echo "<img src='{$url[$i]}' class='img-responsive img-thumbnail' alt='{$gluten['titre']}' title='{$gluten['titre']}'/>";
-
-              echo "</div>";
-                }
-            }
-  }
-      echo "</section>";
-  ?>
-    <!-- end of Gluten free -->
-    <!-- start of Vegan -->
-<div class="row col-md-12">
-<div class="jumbotron">
-  <h2>Vegan</h2>
-</div>
-</div>
-
-<?php
-
-while($vegan = mysqli_fetch_assoc($recup_sql2)){
-
-    echo " <section class='col-md-12'>";
-    echo "<div class='row haha' id='galerie'>";
-    echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
-
-
-    echo "<h3>{$vegan['titre']}</h3>";
-    echo "<p>{$vegan['description']}</p>";
-
-    echo "</div>";
-                    $url = explode("|||",$vegan['iurl']);
-                
-                    for ($i=0; $i<count($url);$i++){
-                      if(empty($url[$i])){
-
-                        echo "";
-
-                      }else{
-              echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
-
-                    echo "<a class='groupe-colorbox' href='{$url[$i]}'><img class='img-responsive img-thumbnail' alt='{$vegan['titre']}' title='{$vegan['titre']}' src='{$url[$i]}'></a>";
-
-              echo "</div>";
-
-                }
-            }
-  }
-      echo "</section>";
-  ?>
   
-     <!--End ov vegan -->
+            <form class="form-horizontal">
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Form Name</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Utilisateur</label>  
+        <div class="col-md-4">
+        <?php
+       echo "<input id='textinput' name='textinput' type='text' value='{$util['login']}' class='form-control input-md'>"
+          ?>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Entreprise</label>  
+        <div class="col-md-4">
+        <?php
+        echo "<input id='textinput' name='textinput' type='text' value='{$util['nom']}' class='form-control input-md'>"
+          ?>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">E-mail</label>  
+        <div class="col-md-4">
+        <?php
+        echo "<input id='textinput' name='textinput' type='text' placeholder='placeholder' value='{$util['mail']}' class='form-control input-md'>"
+          ?>
+        </div>
+      </div>
+
+      <!-- Multiple Checkboxes -->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="checkboxes">Multiple Checkboxes</label>
+        <div class="col-md-4">
+      <?php while($gateaux = mysqli_fetch_assoc($recup_sql4)): ?>
+        <div class="checkbox">
+          <label for="checkboxes-<?= $gateaux['product_id'] ?>">
+            <input type="checkbox" name="checkboxes-<?= $gateaux['product_id'] ?>" id="checkboxes-<?= $gateaux['product_id'] ?>" value="<?= $gateaux['product_id'] ?>">
+            <?php echo $gateaux['titre'] ?>
+          </label>
+        </div>
+      <?php endwhile; ?>
+      
+
+        </div>
+      </div>
+  
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textarea">Instructions ou extas</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+        </div>
+      </div>
+
+      <!-- Multiple Checkboxes -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="checkboxes">Conditions Générales de Vente</label>
+        <div class="col-md-4">
+        <div class="checkbox">
+          <label for="checkboxes-0">
+            <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+            Je suis d'accord.
+          </label>
+        </div>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="singlebutton">Commander</label>
+        <div class="col-md-4">
+          <button id="singlebutton" name="singlebutton" class="btn btn-success">Button</button>
+        </div>
+      </div>
+
+      </fieldset>
+      </form>
+      <?php } ?>
+  
    </div>
   </body>
 </html>
