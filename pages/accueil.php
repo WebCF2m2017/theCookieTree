@@ -19,7 +19,7 @@ if(!strstr($_SERVER['PHP_SELF'],"index.php")){
 			<img src="photo/cloches-banner.jpg" class="img-responsive">
 			
 			<img id="treelogo" src="photo/treelogo.png"  width="55px" height="80px">
-			<h1 id="titleA">theCookieTree</h1>
+			<h1 id="title">theCookieTree</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla ratione explicabo nihil expedita, labore, minima mollitia nisi molestias saepe illum, soluta non illo. Quas consectetur aperiam esse amet reiciendis, nesciunt.</p>
 			
 			

@@ -14,7 +14,7 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
         if(mysqli_num_rows($recup_util)){
             $_SESSION = mysqli_fetch_assoc($recup_util);
             $_SESSION['clef_de_session']=session_id();
-            header("Location: ../"); 
+            header("Location: ./"); 
         }else{ 
             $erreur = "Login et/ou mot de passe incorrecte(s)!";
         }

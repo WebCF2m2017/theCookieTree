@@ -28,13 +28,11 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
   <title>Contact</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
   </head>
   <body>
-   <?php include_once 'menu.php'; ?>
   <div class="container">
   <div class="row">
 
