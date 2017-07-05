@@ -112,13 +112,12 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
   <title>Contact</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     <script src="js/commandejs.js"></script>
   </head>
   <body>
-   <?php include_once 'menu.php'; 
+   <?php 
         while($util = mysqli_fetch_assoc($recup_sql3)){
    ?>
    <div class="container">
