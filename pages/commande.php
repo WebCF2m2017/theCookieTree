@@ -1,4 +1,52 @@
 <?php
+if(isset($_POST['nom'])&& 
+    isset($_POST['login'])&&
+    isset($_POST['mail'])&&
+    isset($_POST['checkboxes'])&&
+    isset($_POST['text'])&&
+    isset($_POST['conditions'])&&
+
+    !empty($_POST['nom'])&&
+    !empty($_POST['login'])&&
+    !empty($_POST['mail'])&&
+    !empty($_POST['checkboxes'])&&
+    !empty($_POST['text'])&&
+    !empty($_POST['conditions'])){
+
+
+
+
+    $lemail = filter_var($_POST['mail'],FILTER_VALIDATE_EMAIL);     
+    $login = trim($_POST['login']);
+    $nom = trim($_POST['nom']);
+    $letexte = trim($_POST['text']);
+    $gateaux = $_POST['checkboxes'];
+    $conditions = $_POST['conditions'];
+        
+        if($lemail){
+          //  $to ='marjolainepapin@gmail.com';
+            $to ='test@hotmail.com';
+            $message = "Mail de votre site theCookieTree \r\n";
+            $message .= 'Nom: '. $nom .' Prenom: ' .$login. "\r\n";
+            $message .= "message: \r\n";
+            $message .= $letexte;
+
+            $headers =   'From: '. $lemail . "\r\n" .
+                         'Reply-To: '. $lemail . "\r\n" .
+                         'X-Mailer: PHP/' . phpversion();
+
+
+            if (mail($to, $message, $headers))
+                $mailsent = '<p> Mail envoyé! </p>';
+            else
+               die('Error');
+
+        }else{
+             $erreur = " <a href='#' class='btn btn-danger' onclick='history.go(-1)'>Retour sur le formulaire</a> <h5>Verifiez tous les champs.</h5>";
+        }
+} 
+
+
 
 if(!strstr($_SERVER['PHP_SELF'],"index.php")){
     header("Location: ./");
@@ -66,6 +114,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <script src="js/commandejs.js"></script>
   </head>
   <body>
    <?php 
@@ -73,7 +122,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
    ?>
    <div class="container">
   
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="POST" action="">
       <fieldset>
 
       <!-- Form Name -->
@@ -84,7 +133,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
         <label class="col-md-4 control-label" for="textinput">Utilisateur</label>  
         <div class="col-md-4">
         <?php
-       echo "<input id='textinput' name='textinput' type='text' value='{$util['login']}' class='form-control input-md'>"
+       echo "<input id='textinput' name='login' type='text' value='{$util['login']}' class='form-control input-md'>"
           ?>
         </div>
       </div>
@@ -94,7 +143,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
         <label class="col-md-4 control-label" for="textinput">Entreprise</label>  
         <div class="col-md-4">
         <?php
-        echo "<input id='textinput' name='textinput' type='text' value='{$util['nom']}' class='form-control input-md'>"
+        echo "<input id='textinput' name='nom' type='text' value='{$util['nom']}' class='form-control input-md'>"
           ?>
         </div>
       </div>
@@ -104,7 +153,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
         <label class="col-md-4 control-label" for="textinput">E-mail</label>  
         <div class="col-md-4">
         <?php
-        echo "<input id='textinput' name='textinput' type='text' placeholder='placeholder' value='{$util['mail']}' class='form-control input-md'>"
+        echo "<input id='textinput' name='mail' type='text' placeholder='placeholder' value='{$util['mail']}' class='form-control input-md'>"
           ?>
         </div>
       </div>
@@ -117,7 +166,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
       <?php while($gateaux = mysqli_fetch_assoc($recup_sql4)): ?>
         <div class="checkbox">
           <label for="checkboxes-<?= $gateaux['product_id'] ?>">
-            <input type="checkbox" name="checkboxes-<?= $gateaux['product_id'] ?>" id="checkboxes-<?= $gateaux['product_id'] ?>" value="<?= $gateaux['product_id'] ?>">
+            <input type="checkbox" name="checkboxes[<?= $gateaux['product_id'] ?>]" id="checkboxes-<?= $gateaux['product_id'] ?>" value="true">
             <?php echo $gateaux['titre'] ?>
           </label>
         </div>
@@ -131,7 +180,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
       <div class="form-group">
         <label class="col-md-4 control-label" for="textarea">Instructions ou extas</label>
         <div class="col-md-4">                     
-          <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+          <textarea class="form-control" id="textarea" name="text"></textarea>
         </div>
       </div>
 
@@ -141,7 +190,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
         <div class="col-md-4">
         <div class="checkbox">
           <label for="checkboxes-0">
-            <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+            <input type="checkbox" name="conditions" id="checkboxes-0" value="1">
             Je suis d'accord.
           </label>
         </div>
@@ -152,7 +201,7 @@ $recup_sql4 = mysqli_query($db, $sql4)or die(mysqli_error($db));
       <div class="form-group">
         <label class="col-md-4 control-label" for="singlebutton">Commander</label>
         <div class="col-md-4">
-          <button id="singlebutton" name="singlebutton" class="btn btn-success">Button</button>
+          <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-success">Commander</button>
         </div>
       </div>
 

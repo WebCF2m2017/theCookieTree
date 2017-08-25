@@ -1,6 +1,6 @@
 
 .navbar{
-	background-color:#005D02;
+	background-color:#2C6545;
 }
 .nav>li>a:focus, .nav>li>a:hover {
     color:white;
@@ -8,14 +8,14 @@
 }
 .nav>li>a, .nav>li>a {
     color:white;
-    background-color:#005D02;
+    background-color:#2C6545;
 }
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
     background-color: #003D05;
     border-color: #337ab7;
 }
 .dropdown-menu {
-   background-color:#005D02; 
+   background-color:#2C6545; 
 }
 #photobanner{
 	margin: 0 auto;
