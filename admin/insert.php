@@ -8,7 +8,44 @@ if(!isset($_SESSION['clef_de_session'])){
 
 	if(empty($_POST)){
 		?>
-		<div class="container">
+		
+<?php
+	}else{
+		if(!empty($_POST['titre']) && !empty($_POST['description']) && !empty($_POST['url']) && !empty($_POST['url1']) && !empty($_POST['url2']) && !empty($_POST['categorie'])){
+
+			$titre =htmlspecialchars(strip_tags(trim($_POST['titre'])),ENT_QUOTES);
+			$description=htmlspecialchars(strip_tags(trim($_POST['description'])),ENT_QUOTES);
+			$categorie=htmlspecialchars(strip_tags(trim($_POST['categorie'])),ENT_QUOTES);
+			$url=htmlspecialchars(strip_tags(trim($_POST['url'])),ENT_QUOTES);
+			$url1=htmlspecialchars(strip_tags(trim($_POST['url1'])),ENT_QUOTES);
+			$url2=htmlspecialchars(strip_tags(trim($_POST['url2'])),ENT_QUOTES);
+			if($titre && $description && $url && $url1 && $url2 && $categorie){
+				if($_SESSION['droit_id'] == 1){
+					$insert = "INSERT INTO produits (titre,description,categ_id) VALUES ('$titre','$description','$categorie')";
+				}else{
+					header("Location: ./");
+            		exit();
+				}
+				$on_insert = mysqli_query($db, $insert);
+			}else{
+				echo "<h1>Veuillez remplir les champs</h1>";
+			}
+		}
+		if($on_insert){
+			$lastid = mysqli_insert_id($db);
+			$insertimage ="INSERT INTO img (url,Produits_id) VALUES ('$url','$lastid'),('$url1','$lastid'),('$url2','$lastid')";
+			$goinsert = mysqli_query($db,$insertimage);
+		}
+	}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insertion de produits</title>
+</head>
+<body>
+	<div class="container">
 		<h1 class="page-header">Insertion d'article</h1>
 <div class="row">
 
@@ -68,42 +105,5 @@ if(!isset($_SESSION['clef_de_session'])){
 
 </div>
 </div>
-<?php
-	}else{
-		if(!empty($_POST['titre']) && !empty($_POST['description']) && !empty($_POST['url']) && !empty($_POST['url1']) && !empty($_POST['url2']) && !empty($_POST['categorie'])){
-
-			$titre =htmlspecialchars(strip_tags(trim($_POST['titre'])),ENT_QUOTES);
-			$description=htmlspecialchars(strip_tags(trim($_POST['description'])),ENT_QUOTES);
-			$categorie=htmlspecialchars(strip_tags(trim($_POST['categorie'])),ENT_QUOTES);
-			$url=htmlspecialchars(strip_tags(trim($_POST['url'])),ENT_QUOTES);
-			$url1=htmlspecialchars(strip_tags(trim($_POST['url1'])),ENT_QUOTES);
-			$url2=htmlspecialchars(strip_tags(trim($_POST['url2'])),ENT_QUOTES);
-			if($titre && $description && $url && $url1 && $url2 && $categorie){
-				if($_SESSION['idrole'] == 1){
-					$insert = "INSERT INTO produits (titre,description,categ_id) VALUES ('$titre','$description','$categorie')";
-				}else{
-					header("Location: ./");
-            		exit();
-				}
-				$on_insert = mysqli_query($db, $insert);
-			}else{
-				echo "<h1>Veuillez remplir les champs</h1>";
-			}
-		}
-		if($on_insert){
-			$lastid = mysqli_insert_id($db);
-			$insertimage ="INSERT INTO img (url,Produits_id) VALUES ('$url','$lastid'),('$url1','$lastid'),('$url2','$lastid')";
-			$goinsert = mysqli_query($db,$insertimage);
-		}
-	}
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Insertion de produits</title>
-</head>
-<body>
-
 </body>
 </html>
