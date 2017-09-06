@@ -39,7 +39,7 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
 
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
-    echo "<h3 class='textes'>{$gluten['titre']}</h3>";
+    echo "<h3>{$gluten['titre']}</h3>";
     echo "<p class='textes'>{$gluten['description']}</p>";
     
   
