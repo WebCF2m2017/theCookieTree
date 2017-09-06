@@ -20,7 +20,7 @@ if(!isset($_SESSION['clef_de_session'])){
 			$url1=htmlspecialchars(strip_tags(trim($_POST['url1'])),ENT_QUOTES);
 			$url2=htmlspecialchars(strip_tags(trim($_POST['url2'])),ENT_QUOTES);
 			if($titre && $description && $url && $url1 && $url2 && $categorie){
-				if($_SESSION['droit_id'] == 1){
+				if($_SESSION['idrole'] == 1){
 					$insert = "INSERT INTO produits (titre,description,categ_id) VALUES ('$titre','$description','$categorie')";
 				}else{
 					header("Location: ./");

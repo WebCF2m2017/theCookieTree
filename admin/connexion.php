@@ -3,7 +3,7 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     $login = htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
     $mdp = trim($_POST['mdp']);
     if($login){
-        $sql="SELECT u.id, u.login, u.mdp, 
+        $sql="SELECT u.id, u.login, u.mdp,
             d.id AS idrole
             FROM util u  
             INNER JOIN droit d ON d.id= u.droit_id
