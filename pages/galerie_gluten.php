@@ -2,6 +2,7 @@
 
 
 
+
 if(!strstr($_SERVER['PHP_SELF'],"index.php")){
     header("Location: ./");
 }
@@ -24,14 +25,13 @@ $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8">
-  <title>Contact</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/lightbox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
-  </style>
   </head>
   <body>
 
@@ -41,7 +41,7 @@ $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
   <section class="col-md-12">
 
 <div class="jumbotron">
-  <h2>Gluten free</h2>
+  <h2>Au-delà du blé</h2>
 </div>
 <?php
 
@@ -49,13 +49,18 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
 
     echo " <section class='col-md-12'>";
     echo "<div class='row' id='galerie'>";
-    echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
 
+    echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
-    echo "<h3>{$gluten['titre']}</h3>";
-    echo "<p>{$gluten['description']}</p>";
+    echo "<h3 class='textes'>{$gluten['titre']}</h3>";
+    echo "<p class='textes'>{$gluten['description']}</p>";
+    
+  
 
     echo "</div>";
+
+              echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
+
                     $url = explode("|||",$gluten['iurl']);
                 
                     for ($i=0; $i<count($url);$i++){
@@ -64,17 +69,29 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
                         echo "";
 
                       }else{
-              echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
+                        
+              echo " <div class='img-thumbs-3'> ";
+                   if($i==0){
+                    echo "<a href='{$url[$i]}' data-title='{$gluten['titre']}<br>{$gluten['description']}' data-lightbox='Triple'><img class='img-responsive img-thumbnail' src='{$url[$i]}' alt='{$gluten['titre']}' title='{$gluten['titre']}'></a>";
+                 }else{
+                  echo "<a href='{$url[$i]}' data-title='{$gluten['titre']}<br>{$gluten['description']}' data-lightbox='Triple'><img style='display:none' src='{$url[$i]}' alt='{$gluten['titre']}' title='{$gluten['titre']}'></a>";
+                 }
 
-                    echo "<img src='{$url[$i]}' class='img-responsive img-thumbnail' alt='{$gluten['titre']}' title='{$gluten['titre']}'/>";
 
               echo "</div>";
+
+
                 }
             }
+              echo "</div>";
+
   }
+
       echo "</section>";
   ?>
   </div>
     <!-- end of Gluten free -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
   </body>
 </html>
