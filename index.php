@@ -16,6 +16,12 @@ require_once 'pages/fonction.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link rel="stylesheet" type="text/css" href="css/style.contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.menu.css">
 </head>
 <body>
 	<?php 

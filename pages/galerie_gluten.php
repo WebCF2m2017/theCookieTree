@@ -22,19 +22,6 @@ $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/lightbox.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
-    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
-  </head>
-  <body>
-
   <div class="container">
   <div class="row">
 
@@ -90,8 +77,4 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
       echo "</section>";
   ?>
   </div>
-    <!-- end of Gluten free -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/lightbox.min.js"></script>
-  </body>
 </html>
