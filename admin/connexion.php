@@ -25,20 +25,6 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Présentation</title>
-    <!-- Bootstrap -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Lien vers la librairie d'icones Font Awesome 4.7.0 -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <title>Admin</title>
-</head>
-<body>
     <div class="container">
         <form action="" method="POST" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal ">
     <div class="row">
@@ -70,5 +56,3 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
         <?php
             if(isset($erreur)){ echo "<h3>$erreur</h3>";}
         ?>
-</body>
-</html>
