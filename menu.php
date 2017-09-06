@@ -1,11 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/style.menu.css">
-</head>
-<body>
 <div class="container">
 		<img id="photobanner" class="img-responsive" src="photo/topbanner.jpg" alt="top-banner">
 </div>
@@ -59,5 +52,3 @@
 <?php
 	}
 ?>
-</body>
-</html>
