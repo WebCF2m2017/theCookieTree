@@ -9,7 +9,7 @@ require_once 'pages/fonction.php';
 <html>
 <head>
 
-	<title></title>
+	<title>theCookieTree</title>
 	<meta charset="utf-8">
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -24,15 +24,16 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8">
-  <title>Contact</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/lightbox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
   </head>
   <body>
+
   <div class="container">
   <div class="row">
 
@@ -41,20 +42,24 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 <div class="jumbotron">
   <h2>Vegan</h2>
 </div>
-
 <?php
 
 while($vegan = mysqli_fetch_assoc($recup_sql2)){
 
     echo " <section class='col-md-12'>";
     echo "<div class='row' id='galerie'>";
-    echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
 
+    echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
-    echo "<h3>{$vegan['titre']}</h3>";
-    echo "<p>{$vegan['description']}</p>";
+    echo "<h3 class='textes'>{$vegan['titre']}</h3>";
+    echo "<p class='textes'>{$vegan['description']}</p>";
+
+  
 
     echo "</div>";
+
+              echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
+
                     $url = explode("|||",$vegan['iurl']);
                 
                     for ($i=0; $i<count($url);$i++){
@@ -63,18 +68,30 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
                         echo "";
 
                       }else{
-              echo " <div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'> ";
+                        
+              echo " <div class='img-thumbs-3'> ";
+              
+                   if($i==0){
+                    echo "<a href='{$url[$i]}' data-title='{$vegan['titre']}<br>{$vegan['description']}' data-lightbox='Triple'><img class='img-responsive img-thumbnail' src='{$url[$i]}' alt='{$vegan['titre']}' title='{$vegan['titre']}'></a>";
+                 }else{
+                  echo "<a href='{$url[$i]}' data-title='{$vegan['titre']}<br>{$vegan['description']}' data-lightbox='Triple'><img style='display:none' src='{$url[$i]}' alt='{$vegan['titre']}' title='{$vegan['titre']}'></a>";
+                 }
 
-                    echo "<img src='{$url[$i]}' class='img-responsive img-thumbnail' alt='{$vegan['titre']}' title='{$vegan['titre']}'/>";
 
               echo "</div>";
 
+
                 }
             }
+              echo "</div>";
+
   }
+
       echo "</section>";
   ?>
-	 <!--End ov vegan -->
-   </div>
+  </div>
+    <!-- end of Gluten free -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
   </body>
 </html>
