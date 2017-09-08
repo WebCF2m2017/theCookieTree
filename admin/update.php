@@ -35,7 +35,7 @@ if(isset($_POST['titre'])&&isset($_POST['description'])&&isset($_POST['categ_id'
             $sql_insert = "INSERT INTO produits (titre,description,categ_id) VALUES ('$titre','$description',$categ_id);";
         }
         // insertion
-        $on_insert = mysqli_query($db, $sql_insert);
+        $sql_insert = mysqli_query($db, $sql_insert);
         header("Location: ./");
     }else{
         $erreur ="Veuillez remplir tous les champs <a href='#' onclick='history.go(-1);'>Retour au formulaire</a>";
