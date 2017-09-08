@@ -34,29 +34,8 @@ if(isset($_POST['lemail'])&&
 } 
 
 ?>
+        
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Contact</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.contact.css">
-        <style type="text/css">
-            textarea {
-            max-width:100%;
-        }
-        .nameform{
-            width: 50%;
-        }
-        h5{
-            text-align: left;
-        }
-        </style>
-</head>
-<body>
 
 <div class="container"> 
 <div class="row">
@@ -123,5 +102,3 @@ if(isset($_POST['lemail'])&&
     
 
 </div>
-</body>
-</html>

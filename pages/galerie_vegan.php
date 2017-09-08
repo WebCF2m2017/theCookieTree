@@ -38,7 +38,7 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
 
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
-    echo "<h3 class='textes'>{$vegan['titre']}</h3>";
+    echo "<h3>{$vegan['titre']}</h3>";
     echo "<p class='textes'>{$vegan['description']}</p>";
 
   
