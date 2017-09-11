@@ -4,6 +4,8 @@ session_start();
 
 require_once 'pages/connect.php';
 require_once 'pages/fonction.php';
+require 'pages/_header.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +56,7 @@ require_once 'pages/fonction.php';
 			require_once 'pages/produits.php';
 
 		}elseif(isset($_GET['commande'])){
-			require_once 'pages/commande.php';
+			require_once 'pages/panier.php';
 
 		}elseif(isset($_GET['galerie_gluten'])){
             require_once 'pages/galerie_gluten.php';
@@ -63,6 +65,8 @@ require_once 'pages/fonction.php';
 			require_once 'pages/galerie_vegan.php';
 		}elseif(isset($_GET['connexion'])){
             require_once 'admin/connexion.php';
+        }elseif(isset($_GET['id'])){
+            require_once 'pages/addpanier.php';
         }
 if(!isset($_SESSION['clef_de_session'])){
     
