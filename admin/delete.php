@@ -4,7 +4,7 @@ if(!strstr($_SERVER['PHP_SELF'],"index.php")){
     exit();
 }
 
-if($_SESSION['']==1){
+if($_SESSION['idrole']!=1){
     header("Location: ./");
     exit();
 }
@@ -15,8 +15,8 @@ if(!isset($_GET['id'])|| !ctype_digit($_GET['id'])){
 }
 
 $id_a_sup = (int) $_GET['id'];
-    
-$sup_art = mysqli_query($db,"DELETE FROM produits WHERE id=$id_a_sup;");
+    $sup_img = mysqli_query($db,"DELETE FROM img WHERE Produits_id=$id_a_sup");
+    $sup_art = mysqli_query($db,"DELETE FROM produits WHERE id=$id_a_sup;");
 
 if(!mysqli_affected_rows($db)){
     $affiche ="Produit introuvable, et donc non supprimé!";
@@ -32,19 +32,7 @@ if(!mysqli_affected_rows($db)){
        
     </head>
     <body>
-        <h1>(Test) bonjour<?=$_SESSION['login']?></h1>
-        <h2>(test) Vous êtes connecté en tant que <?=$_SESSION['permission']?></h2>
-        <h3><a href="./">Accueil</a>
             
-            <?php
-            if($_SESSION['']!=1){
-                ?>
-            <a href="?action=insert">Insérer</a>
-            <?php
-            }
-            ?>
-            <a href="?action=deco">Se déconnecter</a></h3>
-        
         <div id="produits">
             
             <?php

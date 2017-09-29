@@ -72,7 +72,8 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>";
 
 
-    echo "<h3>{$gluten['titre']}</h3>";
+    echo "<h3>{$gluten['titre']}</h3>"; 
+    echo "<h3><a href='./''>Accueil</a></h3>";
     echo "<p>{$gluten['description']}</p>";
 
     echo "</div>";
