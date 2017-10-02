@@ -24,7 +24,7 @@ if(isset($_POST['lemail'])&&
 
 
             if (mail($to, $message, $headers))
-                $mailsent = '<p> Mail envoyé! </p>';
+                $mailsent = '<p style="text-align: center;"> Mail envoyé! </p>';
             else
                die('Error');
 

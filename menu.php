@@ -13,14 +13,14 @@
 				<li><a href="./">Accueil</a></li>
 				<li><a href="?entreprise">Entreprise</a></li>
 				<li>
-					<a data-toggle="dropdown" href="?produits">Produits <b class="caret"></b></a>
+					<a data-toggle="dropdown" href="?galerie_gluten">Produits <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="?galerie_gluten">Au-delà du blé</a></li>
 						<li><a href="?galerie_vegan">Vegan</a></li>
 					</ul>
 				</li>
 				<li><a href="?contact">Contact</a></li>
-				<li><a href="?commande">Commande</a>
+				<li><a href="?commande">Panier</a>
 				<li><a href="?connexion">Connexion</a></li>
 			</ul>
 			</nav>
@@ -36,14 +36,14 @@
 					<li><a href="./">Accueil</a></li>
 					<li><a href="?entreprise">Entreprise</a></li>
 					<li>
-						<a data-toggle="dropdown" href="?produits">Produits <b class="caret"></b></a>
+						<a data-toggle="dropdown" href="?galerie_gluten">Produits <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="?galerie_gluten">Au-delà du blé</a></li>
 							<li><a href="?galerie_vegan">Vegan</a></li>
 						</ul>
 					</li>
 					<li><a href="?contact">Contact</a></li>
-					<li><a href="?commande">Commande</a>
+					<li><a href="?commande">Panier</a>
 					<li><a href="?action=insert">Insertion</a></li>
 					<li><a href="?action=deco">Deconnexion</a></li>
 				</ul>

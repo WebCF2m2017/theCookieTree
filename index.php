@@ -23,6 +23,7 @@ require 'pages/_header.php';
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
     <link href="css/lightbox.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -65,9 +66,12 @@ require 'pages/_header.php';
 			require_once 'pages/galerie_vegan.php';
 		}elseif(isset($_GET['connexion'])){
             require_once 'admin/connexion.php';
-        }elseif(isset($_GET['id'])){
+        }
+
+        elseif(isset($_GET['id'])){
             require_once 'pages/addpanier.php';
         }
+
 if(!isset($_SESSION['clef_de_session'])){
     
 }else{
@@ -103,5 +107,6 @@ if(!isset($_SESSION['clef_de_session'])){
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
     echo "<p class='textes'>{$gluten['description']}</p>";
 
 
-    echo "<a href='?id={$gluten['produits_id']}'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
+    echo "<a href='?id={$gluten['produits_id']}' onclick='bienajoute();' class='add addPanier'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
 
     
   

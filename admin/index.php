@@ -13,6 +13,20 @@ require_once '../pages/fonction.php';
 	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.galerie.css">
+    <link rel="stylesheet" type="text/css" href="css/style.contact.css">
+    <link rel="stylesheet" type="text/css" href="css/style.menu.css">
+    <link rel="stylesheet" type="text/css" href="css/style.accueil.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
 	<?php

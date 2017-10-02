@@ -17,3 +17,14 @@ p{
 	text-align: justify;
 	font-size: 20px;
 }
+.quantity{
+	margin-top: 8%;
+	float:left;
+}
+#del{
+	margin-top: 8%;
+	float:right;
+}
+.prodname{
+	font-size: 18px;
+}
