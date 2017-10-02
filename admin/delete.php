@@ -21,7 +21,7 @@ $id_a_sup = (int) $_GET['id'];
 if(!mysqli_affected_rows($db)){
     $affiche ="Produit introuvable, et donc non supprimé!";
 }else{
-    $affiche = "Votre produit a bien été supprimé!";
+    $affiche = "<center><h3>Votre produit a bien été supprimé!</h3></center>";
 }
 ?>
 <!DOCTYPE html>
