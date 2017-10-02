@@ -67,6 +67,12 @@ require 'pages/_header.php';
             require_once 'admin/connexion.php';
         }elseif(isset($_GET['id'])){
             require_once 'pages/addpanier.php';
+        }elseif(isset($_GET['inscription'])){
+            require_once 'pages/inscription.php';
+        }elseif(isset($_GET['reset'])){
+            require_once 'pages/reset.php';
+        }elseif(isset($_GET['change'])){
+            require_once 'pages/change.php';
         }
 if(!isset($_SESSION['clef_de_session'])){
     

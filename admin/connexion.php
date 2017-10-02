@@ -2,6 +2,7 @@
 if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     $login = htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
     $mdp = trim($_POST['mdp']);
+    $mdp = sha256($mdp);
     if($login){
         $sql="SELECT u.id, u.login, u.mdp,
             d.id AS idrole
@@ -19,7 +20,7 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
             $erreur = "Login et/ou mot de passe incorrecte(s)!";
         }
     }else{
-        header("Location: disconnect.php");
+        header("Location: ?connexion");
     }
 
 }
@@ -47,6 +48,8 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal">
 
             <input type="submit" class="form-control btn btn-primary" value="Connexion"  />
+            <a href="?inscription">Pas encore inscrit ?</a><br>
+            <a href="?reset">J'ai oublié mon mot de passe</a>
     </div>
     </div>
     </div>
