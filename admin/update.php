@@ -3,6 +3,10 @@ if(!strstr($_SERVER['PHP_SELF'],"index.php")){
     header("Location: ./");
     exit();
 }
+if($_SESSION['idrole'] != 1 || !isset($_SESSION['clef_de_session'])){
+    header("Location: ./");
+    exit();
+}
 
 if(!isset($_GET['id'])|| !ctype_digit($_GET['id'])){
     header("Location: ./");
@@ -30,12 +34,12 @@ if(isset($_POST['titre'])&&isset($_POST['letexte'])&&isset($_POST['categ_id'])){
             $id = (int)$_GET['id'];
             $sql_insert = "UPDATE produits SET titre='$titre', description='$texte',categ_id='$categ_id' where id='$id'";
         }else{
-            echo"Vous n'avez pas les droits pour modifier cet article.";
+            echo "<center>Vous n'avez pas les droits pour modifier cet article.</center>";
         }
             
         // insertion
         $sql_insert = mysqli_query($db, $sql_insert);
-        echo "Vous avez bien modifié l'article";
+        echo "<center><h3>Vous avez bien modifié l'article</h3></center>";
         echo"<script>
             window.setTimeout(function() {
             window.location = './';}, 5000);
@@ -60,31 +64,37 @@ if(isset($_POST['titre'])&&isset($_POST['letexte'])&&isset($_POST['categ_id'])){
     <body>
         
         <?php
-                while($ligne= mysqli_fetch_assoc($select_produit)){
-                    ?>
-                    <form action="" name="onsenfout" method="POST">
-            <input type="text" name="titre" placeholder="Titre" value='<?=$ligne['titre']?>' required /><br/>
-            <textarea name="letexte" placeholder="Description" required><?=$ligne['description']?></textarea><br/>
-            <?php
-            // on est utilisateur
-            if($_SESSION['idrole']==1){
-            ?>
-            
-            <input type="hidden" name="categ_id" value='<?=$ligne['categ_id']?>' />
-            <?php
-            // 
-            }else{
-            ?>
-            
+    while($ligne= mysqli_fetch_assoc($select_produit)){
+    ?>
+        <div class="container"> 
+            <div class="row">
+                <form action="" method="POST" name="modifier" class="col-lg-6 col-lg-offset-2 form-horizontal ">
 
-            <?php
-            }
-            if(isset($erreur)){
-                echo $erreur;
-            }
-            ?>
+                    <div class="form-group">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-            <input type="submit" value="Modifier" />
+                            <label for="titre">Titre <span class="required">*</span></label><br />
+                            <input type="text" name="titre" value='<?=$ligne['titre']?>' class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Titre" /><br />
+
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label>Votre descriptif <span class="required">*</span></label><br />
+                            <textarea name="letexte" id="field5" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12"><?=$ligne['description']?></textarea><br />
+                    </div>
+                    </div>
+                    <input type="hidden" name="categ_id" value='<?=$ligne['categ_id']?>' />
+            <div class="row">
+            <div class="btn-group pull-left">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        <input type="submit" class="btn-info btn btn-primary" value="Modifier"/>
+        <?php if(isset($erreur)){echo $erreur;} ?>
+            </div>
+            </div>
+            </div>
         </form>
             <?php
                 }

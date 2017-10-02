@@ -21,14 +21,21 @@ $sql = "SELECT i.produits_id, p.categ_id, p.description, p.titre, c.types, GROUP
 $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
 
 ?>
-
+  <script>
+     function maConfirm(id){
+         var a = confirm("Voulez vous vraiment supprimer cet article? ID="+id);
+         if(a){
+             document.location.href="?action=delete&id="+id;
+         }
+     }
+ </script>
   <div class="container">
   <div class="row">
 
   <section class="col-md-12">
 
-<div class="jumbotron">
-  <h2>Au-delà du blé</h2>
+<div class="page-header">
+  <center><h2>Au-delà du blé</h2></center>
 </div>
 <?php
 
@@ -40,9 +47,9 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
     echo "<h3>{$gluten['titre']}</h3>";
-    if(isset($_SESSION['idrole'])){
+    if(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 1){
       echo " <a href='?action=update&id={$gluten['produits_id']}'><img src='./admin/img/icon_edit.png' alt='modif'/></a> ";
-      echo " <a href='?action=delete&id={$gluten['produits_id']}'><img src='./admin/img/delete_doc.jpg' alt='delete'/></a> ";
+      echo " <a href='' onclick='maConfirm({$gluten['produits_id']});return false;'><img src='./admin/img/delete_doc.jpg' alt='supprimer'/></a> ";
     }
     echo "<p class='textes'>{$gluten['description']}</p>";
 
