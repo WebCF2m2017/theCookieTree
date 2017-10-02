@@ -41,6 +41,7 @@
 				            </script>";
 			        }
 				}else{
-					echo "<center><h3>Vos deux mots de passe doivent être identiques</h3></center>";
+					$erreur = "<h3>Vos deux mots de passe doivent être identiques</h3>";
 				}
 			}
+			if(isset($erreur)){echo $erreur;}

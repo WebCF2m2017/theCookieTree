@@ -37,9 +37,9 @@ if(!isset($_SESSION['clef_de_session']) || $_SESSION['idrole'] != 1){
 			$lastid = mysqli_insert_id($db);
 			$insertimage ="INSERT INTO img (url,Produits_id) VALUES ('$url','$lastid')";
 			$goinsert = mysqli_query($db,$insertimage);
-			echo "<center><h3>Vous avez bien insérer votre produit!</h3></center>";
+			$gginsert = "<h3>Vous avez bien insérer votre produit!</h3>";
 		}else{
-			echo "Il y a eu une erreur, veuillez réessayez";
+			$erreur =  "<h3>Il y a eu une erreur, veuillez réessayez";
 		}
 	}
 ?>
@@ -106,3 +106,7 @@ if(!isset($_SESSION['clef_de_session']) || $_SESSION['idrole'] != 1){
     </div>
 </body>
 </html>
+<?php
+if(isset($erreur)){echo $erreur;}
+if(isset($gginsert)){echo $gginsert;}
+?>
