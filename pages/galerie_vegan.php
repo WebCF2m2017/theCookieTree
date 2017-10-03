@@ -54,7 +54,7 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
     }
     echo "<p class='textes'>{$vegan['description']}</p>";
 
-    echo "<a href='?id={$vegan['produits_id']}'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
+    echo "<a href='?id={$vegan['produits_id']}' class='add addPanier' onclick='bienajoute();'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
 
 
 

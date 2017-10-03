@@ -24,6 +24,8 @@ if(isset($_POST['lemail'])&&
                          'X-Mailer: PHP/' . phpversion();
 
 
+            if (mail($to, $message, $headers))
+                $mailsent = '<p style="text-align: center;"> Mail envoyé! </p>';
             if (mail($to, $subject, $message, $headers))
                 $mailsent = '<center><h2> Mail envoyé! </h2></center>';
             else

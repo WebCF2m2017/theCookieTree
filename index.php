@@ -23,6 +23,7 @@ require 'pages/_header.php';
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
     <link href="css/lightbox.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -60,12 +61,13 @@ require 'pages/_header.php';
 
 		}elseif(isset($_GET['galerie_gluten'])){
             require_once 'pages/galerie_gluten.php';
-
+        }elseif(isset($_GET['order'])){
+            require_once 'pages/commandes.php';    
         }elseif(isset($_GET['galerie_vegan'])){
 			require_once 'pages/galerie_vegan.php';
 		}elseif(isset($_GET['connexion'])){
             require_once 'admin/connexion.php';
-        }elseif(isset($_GET['id']) && !isset($_GET['action'])){
+        }elseif(isset($_GET['id'])&&!isset($_GET['action'])){
             require_once 'pages/addpanier.php';
         }elseif(isset($_GET['inscription'])){
             require_once 'pages/inscription.php';
@@ -74,6 +76,7 @@ require 'pages/_header.php';
         }elseif(isset($_GET['token'])){
                 require_once 'pages/change.php';
         }
+
 if(!isset($_SESSION['clef_de_session'])){
     
 }else{
@@ -109,5 +112,6 @@ if(!isset($_SESSION['clef_de_session'])){
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

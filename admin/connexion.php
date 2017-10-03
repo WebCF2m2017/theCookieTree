@@ -4,11 +4,13 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     $mdp = trim($_POST['mdp']);
     $mdp = sha256($mdp);
     if($login){
-        $sql="SELECT u.id, u.login, u.mdp,
-            d.id AS idrole
+
+        $sql="SELECT u.login,  
+            d.id AS idrole, u.mail,u.nom, u.id, u.nomentreprise, u.prenom 
+
             FROM util u  
             INNER JOIN droit d ON d.id= u.droit_id
-            WHERE u.login = '$login' AND u.mdp = '$mdp';
+            WHERE u.login = '$login' AND u.mdp = '$mdp'
             ";
         $recup_util = mysqli_query($db, $sql)or die(mysqli_error($db));
         

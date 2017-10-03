@@ -20,5 +20,19 @@ body{
 }
 p{
 	text-align: justify;
+<<<<<<< HEAD
+	font-size: 20px;
+}
+.quantity{
+	margin-top: 8%;
+	float:left;
+}
+#del{
+	margin-top: 8%;
+	float:right;
+}
+.prodname{
+=======
+>>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
 	font-size: 18px;
 }
