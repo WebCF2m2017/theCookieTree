@@ -75,7 +75,7 @@ if(isset($_POST['lemail'])&&
 
         <i class="fa fa-paper-plane" aria-hidden="true"></i>
         <input type="submit" class="btn-info btn btn-primary" value="Envoyer l'email"/>
-        <?php if(isset($erreur)){echo $erreur;} ?>
+        
 </div>
 </div>
 </div>
@@ -94,9 +94,8 @@ if(isset($_POST['lemail'])&&
 </div>
 
     <?php
-    if(isset($mailsent)){
-        echo  $mailsent;
-    }
+    if(isset($mailsent)){echo  $mailsent;} 
+    if(isset($erreur)){echo $erreur;}
     ?>
     
 

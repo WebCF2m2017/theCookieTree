@@ -24,7 +24,7 @@ if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !e
             $entreprise = "/";
         }
 
-        $insert = "INSERT INTO util (login,mdp,mail,nom,nomentreprise,prenom,droit_id) VALUES ('$pseudo','$mdp','$email','$nom','$entreprise','$prenom',2)";
+        $insert = "INSERT INTO util (login,mdp,mail,nom,nomentreprise,prenom,droit_id) VALUES ('$pseudo','$mdp','$email','$nom','$entreprise','$prenom',1)";
         $on_insert = mysqli_query($db,$insert);
         
         if($on_insert){
@@ -41,7 +41,7 @@ if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !e
 
         }
     }else{
-        echo "<center><h3>Vos deux mots de passe doivent être identiques</h3></center>";
+        $erreur = "<h3>Vos deux mots de passe doivent être identiques</h3>";
     }
     
 
