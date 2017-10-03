@@ -61,15 +61,22 @@ require 'pages/_header.php';
 
 		}elseif(isset($_GET['galerie_gluten'])){
             require_once 'pages/galerie_gluten.php';
-
+        }elseif(isset($_GET['order'])){
+            require_once 'pages/commandes.php';    
         }elseif(isset($_GET['galerie_vegan'])){
 			require_once 'pages/galerie_vegan.php';
 		}elseif(isset($_GET['connexion'])){
             require_once 'admin/connexion.php';
         }
 
-        elseif(isset($_GET['id'])){
+        elseif(isset($_GET['id'])&&!isset($_GET['action'])){
             require_once 'pages/addpanier.php';
+        }elseif(isset($_GET['inscription'])){
+            require_once 'pages/inscription.php';
+        }elseif(isset($_GET['reset'])){
+            require_once 'pages/reset.php';
+        }elseif(isset($_GET['change'])){
+            require_once 'pages/change.php';
         }
 
 if(!isset($_SESSION['clef_de_session'])){

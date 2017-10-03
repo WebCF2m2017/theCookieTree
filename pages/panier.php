@@ -7,12 +7,10 @@ if(isset($_GET['del'])){
 var_dump($_SESSION);
 
 
-
     if(isset( $_SESSION['id'])&& ctype_digit( $_SESSION['id'])){
 
-        $iduser = (int) $_SESSION['id'];
+        $quantites = $_SESSION['panier'];
 
-        $quantites = array($_SESSION['panier']);
         $emailUser = $_SESSION['mail'];
         $utilActive = $_SESSION['nom'];
         $nomentreprise = $_SESSION['nomentreprise'];
@@ -23,34 +21,31 @@ var_dump($_SESSION);
              }else{
              $products = $DB->query('SELECT * FROM produits WHERE id IN ('.implode(',',$ids).')');
              }
-                foreach ($products as $product){
-                  
-                  $nomProduits = implode(array('titre' => $product->titre));
+                
+} 
 
-                  var_dump($nomProduits);
-                  var_dump($quantites);
+if(!empty($_POST))
+{
 
+  if(isset($_POST['texte'])&& 
+    !empty($_POST['texte'])){
 
-                  $sql = "INSERT INTO commande (produit, quantite, nomentreprise) VALUES ($iduser,'$utilActive','$emailUser',$nomProduits,$quantite,'$nomentreprise')";
+    $texte = trim($_POST['texte']);
 
-                } 
+  foreach ($_SESSION['panier'] as $key => $value) {
 
-                  var_dump($utilActive);
-                  var_dump($emailUser);
-                  var_dump($nomentreprise);
+    echo "Gateau $key => $value"; 
 
-        }else {
-          header('Location: ?connexion');
-        }
-        
-
-    
-
+    $sql = "INSERT INTO commande (util, mail, produit, quantite, nomentreprise, indications) VALUES ('$utilActive','$emailUser','$key','$value', '$nomentreprise', '$texte')";
+    $insertion = mysqli_query($db,$sql);
+  }
+}
+}
 
 
 ?>
 
-      s<div class="container">
+      <div class="container">
   
             <form class="form-horizontal" method="POST" action="">
       <fieldset>
@@ -94,7 +89,7 @@ var_dump($_SESSION);
       <div class="form-group">
         <label class="col-md-4 control-label" for="textarea">Instructions ou extas</label>
         <div class="col-md-4">                     
-          <textarea class="form-control" name="texte" id="textarea"></textarea>
+          <textarea class="form-control" name="texte" id="textarea"> </textarea>
 
         </div>
       </div>

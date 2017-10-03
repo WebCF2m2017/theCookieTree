@@ -40,6 +40,10 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
     echo "<h3>{$gluten['titre']}</h3>";
+    if(isset($_SESSION['idrole'])){
+      echo " <a href='?action=update&id={$gluten['produits_id']}'><img src='./admin/img/icon_edit.png' alt='modif'/></a> ";
+      echo " <a href='?action=delete&id={$gluten['produits_id']}'><img src='./admin/img/delete_doc.jpg' alt='delete'/></a> ";
+    }
     echo "<p class='textes'>{$gluten['description']}</p>";
 
 

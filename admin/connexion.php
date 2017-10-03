@@ -2,12 +2,15 @@
 if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     $login = htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
     $mdp = trim($_POST['mdp']);
+    $mdp = sha256($mdp);
     if($login){
+
         $sql="SELECT u.login,  
-            d.id AS idrole, u.mail,u.nom, u.id, u.nomentreprise, u.prenom
+            d.id AS idrole, u.mail,u.nom, u.id, u.nomentreprise, u.prenom 
+
             FROM util u  
             INNER JOIN droit d ON d.id= u.droit_id
-            WHERE u.login = '$login' AND u.mdp = '$mdp';
+            WHERE u.login = '$login' AND u.mdp = '$mdp'
             ";
         $recup_util = mysqli_query($db, $sql)or die(mysqli_error($db));
         
@@ -19,7 +22,7 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
             $erreur = "Login et/ou mot de passe incorrecte(s)!";
         }
     }else{
-        header("Location: disconnect.php");
+        header("Location: ?connexion");
     }
 
 }
@@ -47,6 +50,8 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal">
 
             <input type="submit" class="form-control btn btn-primary" value="Connexion"  />
+            <a href="?inscription">Pas encore inscrit ?</a><br>
+            <a href="?reset">J'ai oublié mon mot de passe</a>
     </div>
     </div>
     </div>
