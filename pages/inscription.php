@@ -1,22 +1,26 @@
 <?php
+<<<<<<< HEAD
 //ini_set("SMTP", "smtp.numericable.be");
+=======
+
+>>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
 if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !empty($_POST['email']) &&!empty($_POST['nom']) &&!empty($_POST['prenom'])){
     if($_POST['mdp'] == $_POST['mdp2']){
         $pseudo = htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
         $mdp = htmlspecialchars(strip_tags(trim($_POST['mdp'])),ENT_QUOTES);
         $mdp = sha256($mdp);
-        $email = htmlspecialchars(strip_tags(trim($_POST['email'])),ENT_QUOTES);
+        $email = filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
         $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
         $prenom = htmlspecialchars(strip_tags(trim($_POST['prenom'])),ENT_QUOTES);
 
         $trouvelogin = mysqli_query($db,"SELECT login FROM util WHERE login= '$pseudo'");
         if(mysqli_num_rows($trouvelogin)){
-            $erreur = "Le pseudo que vous venez d'entrer est déjà utilisé";  
+            $erreur = "<center><h2>Le pseudo que vous venez d'entrer est déjà utilisé</center></h2>";  
             }
         $trouvemail = mysqli_query($db,"SELECT mail FROM util WHERE mail= '$email'");
         if(mysqli_num_rows($trouvemail)){
-            $erreur = "L'adresse email que vous venez d'entrer est déjà utilisée";  
-            }   
+            $erreur = "<center><h2>L'adresse email que vous venez d'entrer est déjà utilisée</h2></center>";  
+            }
 
         if(!empty($_POST['entreprise'])){
             $entreprise = htmlspecialchars(strip_tags(trim($_POST['entreprise'])),ENT_QUOTES);
@@ -24,11 +28,19 @@ if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !e
             $entreprise = "/";
         }
 
+<<<<<<< HEAD
         $insert = "INSERT INTO util (login,mdp,mail,nomentreprise,nom,prenom,droit_id) VALUES ('$pseudo','$mdp','$email','$entreprise','$nom','$prenom',2)";
         $on_insert = mysqli_query($db,$insert);
         
         if($on_insert){
             $expe = "q588404@mvrht.net";
+=======
+        $insert = "INSERT INTO util (login,mdp,mail,nom,nomentreprise,prenom,droit_id) VALUES ('$pseudo','$mdp','$email','$nom','$entreprise','$prenom',1)";
+        $on_insert = mysqli_query($db,$insert);
+        
+        if($on_insert){
+            $expe = "tqh05558@loaoa.com";
+>>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
             $to = $email;
             $subject = 'Inscription theCookieTree';
             $message = 'Merci de vous être inscrit chez theCookieTree. Nous vous souhaitons une agréable visite! Votre pseudo est '.$pseudo.'.';
@@ -37,11 +49,11 @@ if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !e
             'X-Mailer: PHP/' . phpversion();
             mail($to, $subject, $message, $headers);
 
-            $verifmail = "Votre compte a bien été créer, un email vous a été envoyé";
+            $verifmail = "<center>Votre compte a bien été créer, un email vous a été envoyé</center>";
 
         }
     }else{
-        echo "Vos deux mots de passe doivent être identiques";
+        $erreur = "<h3>Vos deux mots de passe doivent être identiques</h3>";
     }
     
 

@@ -22,14 +22,21 @@ $sql2 = "SELECT i.produits_id, p.categ_id, p.description, p.titre, c.types, GROU
 $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 
 ?>
-
+  <script>
+     function maConfirm(id){
+         var a = confirm("Voulez vous vraiment supprimer cet article? ID="+id);
+         if(a){
+             document.location.href="?action=delete&id="+id;
+         }
+     }
+ </script>
   <div class="container">
   <div class="row">
 
   <section class="col-md-12">
 
-<div class="jumbotron">
-  <h2>Vegan</h2>
+<div class="page-header">
+  <center><h2>Vegan</h2></center>
 </div>
 <?php
 
@@ -43,7 +50,7 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
     echo "<h3>{$vegan['titre']}</h3>";
     if(isset($_SESSION['idrole'])){
       echo " <a href='?action=update&id={$vegan['produits_id']}'><img src='./admin/img/icon_edit.png' alt='modif'/></a> ";
-      echo " <a href='?action=delete&id={$vegan['produits_id']}'><img src='./admin/img/delete_doc.jpg' alt='delete'/></a> ";
+      echo " <a href='' onclick='maConfirm({$vegan['produits_id']});return false;'><img src='./admin/img/delete_doc.jpg' alt='supprimer'/></a> ";
     }
     echo "<p class='textes'>{$vegan['description']}</p>";
 

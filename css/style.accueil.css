@@ -1,5 +1,10 @@
 h1,h2,h3{
 	font-family: 'Paytone One', sans-serif;
+	text-align: center;
+	color: #2C6545;
+}
+.justify, #title {
+	text-align: justify;
 }
 #treelogo{
 	float:left;
@@ -15,6 +20,7 @@ body{
 }
 p{
 	text-align: justify;
+<<<<<<< HEAD
 	font-size: 20px;
 }
 .quantity{
@@ -26,5 +32,7 @@ p{
 	float:right;
 }
 .prodname{
+=======
+>>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
 	font-size: 18px;
 }

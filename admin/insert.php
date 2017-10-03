@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['clef_de_session'])){
+if(!isset($_SESSION['clef_de_session']) || $_SESSION['idrole'] != 1){
     header("Location: ./");
     exit();
 }
@@ -37,8 +37,9 @@ if(!isset($_SESSION['clef_de_session'])){
 			$lastid = mysqli_insert_id($db);
 			$insertimage ="INSERT INTO img (url,Produits_id) VALUES ('$url','$lastid')";
 			$goinsert = mysqli_query($db,$insertimage);
+			$gginsert = "<h3>Vous avez bien insérer votre produit!</h3>";
 		}else{
-			echo "Il y a eu une erreur, veuillez réessayez";
+			$erreur =  "<h3>Il y a eu une erreur, veuillez réessayez";
 		}
 	}
 ?>
@@ -50,23 +51,30 @@ if(!isset($_SESSION['clef_de_session'])){
 </head>
 <body>
 	<div class="container">
-		<h1 class="page-header">Insertion d'article</h1>
+		<center><h1 class="page-header">Insertion d'article</h1></center>
 <div class="row">
 
 <form action="" method="POST" name="Insertion produit" class="col-lg-6 col-lg-offset-2 form-horizontal ">
 
 <div class="form-group">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <label for="titre">Titre du produit <span class="required">*</span></label><br />
-    <input type="text" id="titre" name="titre" class="nameform form-control field-divided col-lg-6 col-md-6 col-sm-6 col-xs-6" />
-    <label for="description">Description du produit <span class="required">*</span></label><br />
-    <input type="text" name="description" class="nameform form-control field-divided col-lg-6 col-md-6 col-sm-6 col-xs-6"  /><br />
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+        <label for="titre">Titre <span class="required">*</span></label><br />
+        <input type="text" name="titre" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Titre" /><br />
+
 </div>
 </div>
 <div class="form-group">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>Votre descriptif <span class="required">*</span></label><br />
+        <textarea name="description" id="field5" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12"></textarea><br />
+    </div>
+    </div>
+
+<div class="form-group">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<label>Première url d'image <span class="required">*</span></label><br/>
-        <input name="url" id="url" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" ></input><br />
+		<label>Url d'image <span class="required">*</span></label><br/>
+        <input name="url" id="url" placeholder="Insérez une url d'image" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" ></input><br />
 </div>
 </div>
 <div class="form-group">
@@ -87,14 +95,18 @@ if(!isset($_SESSION['clef_de_session'])){
 
 
 
-<div class="btn-group pull-left">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row">
+    <div class="btn-group pull-left">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-        <input type="submit" class="btn-info btn btn-primary" value="Envoyer l'email"/>
-        <?php if(isset($erreur)){echo $erreur;} ?>
-
-</div>
-</div>
+		<i class="fa fa-paper-plane" aria-hidden="true"></i>
+		<input type="submit" class="btn-info btn btn-primary" value="Modifier"/>
+    </div>
+    </div>
+    </div>
 </body>
 </html>
+<?php
+if(isset($erreur)){echo $erreur;}
+if(isset($gginsert)){echo $gginsert;}
+?>

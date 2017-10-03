@@ -12,10 +12,11 @@ if(isset($_POST['lemail'])&&
         
         if($lemail){
           //  $to ='marjolainepapin@gmail.com';
-            $to ='test@hotmail.com';
-            $message = "Mail de votre site theCookieTree \r\n";
-            $message .= 'Nom: '. $nom .' Prenom: ' .$prenom. "\r\n";
-            $message .= "message: \r\n";
+            $to ='test@gmail.com';
+            $subject = "Mail de votre site theCookieTree \r\n";
+            $message = 'Nom: '. $nom . "\r\n";
+            $message .= 'Prenom: ' .$prenom. "\r\n";
+            $message .= "Message: \r\n";
             $message .= $letexte;
 
             $headers =   'From: '. $lemail . "\r\n" .
@@ -25,6 +26,8 @@ if(isset($_POST['lemail'])&&
 
             if (mail($to, $message, $headers))
                 $mailsent = '<p style="text-align: center;"> Mail envoyé! </p>';
+            if (mail($to, $subject, $message, $headers))
+                $mailsent = '<center><h2> Mail envoyé! </h2></center>';
             else
                die('Error');
 
@@ -74,7 +77,7 @@ if(isset($_POST['lemail'])&&
 
         <i class="fa fa-paper-plane" aria-hidden="true"></i>
         <input type="submit" class="btn-info btn btn-primary" value="Envoyer l'email"/>
-        <?php if(isset($erreur)){echo $erreur;} ?>
+        
 </div>
 </div>
 </div>
@@ -92,12 +95,9 @@ if(isset($_POST['lemail'])&&
 
 </div>
 
-
-    
     <?php
-    if(isset($mailsent)){
-        echo '<h2>' . $mailsent . '</h2>';
-    }
+    if(isset($mailsent)){echo  $mailsent;} 
+    if(isset($erreur)){echo $erreur;}
     ?>
     
 

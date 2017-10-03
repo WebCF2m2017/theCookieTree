@@ -67,16 +67,14 @@ require 'pages/_header.php';
 			require_once 'pages/galerie_vegan.php';
 		}elseif(isset($_GET['connexion'])){
             require_once 'admin/connexion.php';
-        }
-
-        elseif(isset($_GET['id'])&&!isset($_GET['action'])){
+        }elseif(isset($_GET['id'])&&!isset($_GET['action'])){
             require_once 'pages/addpanier.php';
         }elseif(isset($_GET['inscription'])){
             require_once 'pages/inscription.php';
         }elseif(isset($_GET['reset'])){
             require_once 'pages/reset.php';
-        }elseif(isset($_GET['change'])){
-            require_once 'pages/change.php';
+        }elseif(isset($_GET['token'])){
+                require_once 'pages/change.php';
         }
 
 if(!isset($_SESSION['clef_de_session'])){

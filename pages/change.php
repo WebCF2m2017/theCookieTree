@@ -1,12 +1,4 @@
-<?php
-
-if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['token'])){
-	if($_SESSION['token'] == $_POST['token']){
-		$timestamp_ancien = time() - (10*60);
-
-		if($_SESSION['token_time'] >= $timestamp_ancien){
-			?>
-			<div class="container">
+<div class="container">
         		<form action="" method="POST" class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal ">
     				<div class="row">
 						<div class="form-group">
@@ -26,7 +18,6 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
     				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-8 col-sm-offset-2 col-xs-12 form-horizontal">
 
             			<input type="submit" class="form-control btn btn-primary" value="Modifier"  />
-            			<input type="hidden" name="token" value="<?=$_SESSION['token']?>">
     				</div>
     			</div>
     		</div>
@@ -34,16 +25,23 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
         		</form>
     		</div>
     <?php
+    $token = $_GET['token'];
     		if(isset($_POST['mdp']) && isset($_POST['mdp2'])){
 	    		if($_POST['mdp'] == $_POST['mdp2']){
 			        $mdp = htmlspecialchars(strip_tags(trim($_POST['mdp'])),ENT_QUOTES);
 			        $mdp = sha256($mdp);
 
-			        $changer = mysqli_query($db,"UPDATE util SET mdp = '$mdp'");
+			        $changer = mysqli_query($db,"UPDATE util SET mdp = '$mdp' WHERE token = '$token'");
+			        if($changer){
+			        	$supprimetoken = mysqli_query($db,"UPDATE util SET token ='' WHERE  token='$token'");
+			        	echo "<center><h3>Votre mot de passe a bien été modifié!</h3></center>";
+			        	echo"<script>
+					            window.setTimeout(function() {
+					            window.location = './';}, 3000);
+				            </script>";
+			        }
 				}else{
-					echo "Vos deux mots de passe doivent être identiques";
+					$erreur = "<h3>Vos deux mots de passe doivent être identiques</h3>";
 				}
 			}
-}
-}
-}
+			if(isset($erreur)){echo $erreur;}

@@ -19,8 +19,6 @@ if($_SESSION['idrole']==1){
 
 }else{
 
-	$session = $_SESSION['id'];
-
 	$sql = "SELECT c.util, c.mail, c.produit, c.quantite, c.nomentreprise, c.indications, c.dateCommande, p.id, p.titre
     FROM commande c
     	INNER JOIN produits p
