@@ -19,7 +19,6 @@
 					</ul>
 				</li>
 				<li><a href="?contact">Contact</a></li>
-				<li><a href="?commande">Panier</a>
 				<li><a href="?connexion">Connexion</a></li>
 			</ul>
 			</nav>
@@ -42,7 +41,6 @@
 						</ul>
 					</li>
 					<li><a href="?contact">Contact</a></li>
-					<li><a href="?commande">Panier</a>
 					<li><a href="?action=insert">Insertion</a></li>
 					<li><a href="?order">Commandes</a></li>
 					<li><a href="?action=deco">Deconnexion</a></li>
@@ -66,6 +64,7 @@
 					</li>
 					<li><a href="?contact">Contact</a></li>
 					<li><a href="?commande">Commande</a>
+					<li><a href="?order">Commandes</a></li>
 					<li><a href="?action=deco">Deconnexion</a></li>
 				</ul>
 			</nav>

@@ -48,7 +48,7 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
     echo "<h3>{$vegan['titre']}</h3>";
-    if(isset($_SESSION['idrole'])){
+    if(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 1){
       echo " <a href='?action=update&id={$vegan['produits_id']}'><img src='./admin/img/icon_edit.png' alt='modif'/></a> ";
       echo " <a href='' onclick='maConfirm({$vegan['produits_id']});return false;'><img src='./admin/img/delete_doc.jpg' alt='supprimer'/></a> ";
     }

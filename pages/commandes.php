@@ -19,12 +19,15 @@ if($_SESSION['idrole']==1){
 
 }else{
 
-	$sql = "SELECT c.util, c.mail, c.produit, c.quantite, c.nomentreprise, c.indications, c.dateCommande, p.id, p.titre
+	$id = $_SESSION['id'];
+
+	$sql = "SELECT c.util, c.mail, c.produit, c.quantite, c.nomentreprise, c.indications, c.dateCommande, p.id, p.titre, u.id
     FROM commande c
     	INNER JOIN produits p
     ON p.id = c.produit
     	INNER JOIN util u
-    WHERE u.login = c.util
+    	ON u.login = c.util
+    WHERE u.id = $id
         ORDER BY dateCommande DESC
     ;";
 
