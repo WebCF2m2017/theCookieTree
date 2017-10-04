@@ -183,38 +183,38 @@
             </a>
             </li>
             <li class="">
-                <a href="?entreprise" style="color:black">
+                <a href="?entreprise" style="color:white">
                 Entreprise<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
               </span>
             </a>
             </li>
               <li class="dropdown">
-                <a data-toggle="dropdown" style="color:black">
+                <a data-toggle="dropdown" style="color:white">
                   Produits <span class="caret">
                 </span>
                 <ul class="dropdown-menu">
                 <li class="">
-                  <a href="?galerie_tout" style="color:black">
+                  <a href="?galerie_tout" style="color:white">
                     Tous les produits<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?galerie_gluten" style="color:black">
+                  <a href="?galerie_gluten" style="color:white">
                   Au-delà du blé<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
             </li> <li class="">
-                <a href="?galerie_vegan" style="color:black">
+                <a href="?galerie_vegan" style="color:white">
                 Vegan<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"> </span></a>
             </li>
                 </ul>
                 <li class="">
-                  <a href="?contact" style="color:black">
+                  <a href="?contact" style="color:white">
                     Contact<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                
                 <li class="">
-                  <a href="?connexion" style="color:black">
+                  <a href="?connexion" style="color:white">
                     Connexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
@@ -253,44 +253,44 @@
             </a>
             </li>
             <li class="">
-                <a href="?entreprise" style="color:black">
+                <a href="?entreprise" style="color:white">
                 Entreprise<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
               </span>
             </a>
             </li>
               <li class="dropdown">
-                <a data-toggle="dropdown" style="color:black">
+                <a data-toggle="dropdown" style="color:white">
                 
                   Produits <span class="caret">
                 </span>
                 <ul class="dropdown-menu">
                 <li class="">
-                  <a href="?galerie_tout" style="color:black">
+                  <a href="?galerie_tout" style="color:white">
                     Tous les produits<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?galerie_gluten" style="color:black">
+                  <a href="?galerie_gluten" style="color:white">
                   Au-delà du blé<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
             </li> <li class="">
-                <a href="?galerie_vegan" style="color:black">
+                <a href="?galerie_vegan" style="color:white">
                 Vegan<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"> </span></a>
             </li>
                 </ul>
                 <li class="">
-                  <a href="?order" style="color:black">
+                  <a href="?order" style="color:white">
                     Réservations clients<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?action=insert" style="color:black">
+                  <a href="?action=insert" style="color:white">
 
                    Insertion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?action=deco" style="color:black">
+                  <a href="?action=deco" style="color:white">
                     Déconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
@@ -328,48 +328,48 @@
             </a>
             </li>
             <li class="">
-                <a href="?entreprise" style="color:black">
+                <a href="?entreprise" style="color:white">
                 Entreprise<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
               </span>
             </a>
             </li>
               <li class="dropdown">
-                <a data-toggle="dropdown" style="color:black">
+                <a data-toggle="dropdown" style="color:white">
                 
                   Produits <span class="caret">
                 </span>
                 <ul class="dropdown-menu">
                 <li class="">
-                  <a href="?galerie_tout" style="color:black">
+                  <a href="?galerie_tout" style="color:white">
                     Tous les produits<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?galerie_gluten" style="color:black">
+                  <a href="?galerie_gluten" style="color:white">
                   Au-delà du blé<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
             </li> <li class="">
-                <a href="?galerie_vegan" style="color:black">
+                <a href="?galerie_vegan" style="color:white">
                 Vegan<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"> </span></a>
             </li>
                 </ul>
                 <li class="">
-                  <a href="?contact" style="color:black">
+                  <a href="?contact" style="color:white">
                     Contact<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?commande" style="color:black">
+                  <a href="?commande" style="color:white">
                     Réservation<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?order" style="color:black">
+                  <a href="?order" style="color:white">
                     Vos réservations<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
                 <li class="">
-                  <a href="?action=deco" style="color:black">
+                  <a href="?action=deco" style="color:white">
                     Déconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span>
                   </a>
                 </li> 
