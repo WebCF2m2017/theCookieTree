@@ -12,7 +12,7 @@
 				<li><a href="./">Accueil</a></li>
 				<li><a href="?entreprise">Entreprise</a></li>
 				<li>
-					<a data-toggle="dropdown">Produits <b class="caret"></b></a>
+					<a href="#" data-toggle="dropdown">Produits <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="?galerie_tout">Tous les produits</a></li>
 						<li><a href="?galerie_gluten">Au-delà du blé</a></li>
@@ -35,7 +35,7 @@
 					<li><a href="./">Accueil</a></li>
 					<li><a href="?entreprise">Entreprise</a></li>
 					<li>
-						<a data-toggle="dropdown">Produits <b class="caret"></b></a>
+						<a href="#" data-toggle="dropdown">Produits <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="?galerie_tout">Tous les produits</a></li>
 							<li><a href="?galerie_gluten">Au-delà du blé</a></li>
@@ -57,7 +57,7 @@
 					<li><a href="./">Accueil</a></li>
 					<li><a href="?entreprise">Entreprise</a></li>
 					<li>
-						<a data-toggle="dropdown">Produits <b class="caret"></b></a>
+						<a href="#" data-toggle="dropdown">Produits <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="?galerie_tout">Tous les produits</a></li>
 							<li><a href="?galerie_gluten">Au-delà du blé</a></li>
