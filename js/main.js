@@ -32,4 +32,3 @@
 function bienajoute(){
 	alert("Le produits a bien ete ajoute");
 }
-

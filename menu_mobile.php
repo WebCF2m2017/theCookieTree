@@ -189,7 +189,7 @@
             </a>
             </li>
               <li class="dropdown">
-                <a href="?produits" data-toggle="dropdown" style="color:black">
+                <a data-toggle="dropdown" style="color:black">
                   Produits <span class="caret">
                 </span>
                 <ul class="dropdown-menu">
@@ -259,7 +259,8 @@
             </a>
             </li>
               <li class="dropdown">
-                <a href="?produits" data-toggle="dropdown" style="color:black">
+                <a data-toggle="dropdown" style="color:black">
+                
                   Produits <span class="caret">
                 </span>
                 <ul class="dropdown-menu">
@@ -333,7 +334,8 @@
             </a>
             </li>
               <li class="dropdown">
-                <a href="?produits" data-toggle="dropdown" style="color:black">
+                <a data-toggle="dropdown" style="color:black">
+                
                   Produits <span class="caret">
                 </span>
                 <ul class="dropdown-menu">
