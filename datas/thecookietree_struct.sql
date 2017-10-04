@@ -1,148 +1,233 @@
--- MySQL Workbench Forward Engineering
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Client :  127.0.0.1
+-- Généré le :  Mer 04 Octobre 2017 à 12:10
+-- Version du serveur :  5.7.14
+-- Version de PHP :  7.0.10
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
--- -----------------------------------------------------
--- Schema theCookieTree
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema theCookieTree
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `theCookieTree` DEFAULT CHARACTER SET utf8 ;
-USE `theCookieTree` ;
-
--- -----------------------------------------------------
--- Table `theCookieTree`.`categ`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`categ` ;
-
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`categ` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `types` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
--- -----------------------------------------------------
--- Table `theCookieTree`.`Produits`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`Produits` ;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`Produits` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `titre` VARCHAR(100) NOT NULL,
-  `description` VARCHAR(3000) NOT NULL,
-  `categ_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_Produits_categ1_idx` (`categ_id` ASC),
-  CONSTRAINT `fk_Produits_categ1`
-    FOREIGN KEY (`categ_id`)
-    REFERENCES `theCookieTree`.`categ` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Base de données :  `thecookietree`
+--
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `theCookieTree`.`img`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`img` ;
+--
+-- Structure de la table `categ`
+--
 
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`img` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `url` VARCHAR(555) NOT NULL,
-  `Produits_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_img_Produits1_idx` (`Produits_id` ASC),
-  CONSTRAINT `fk_img_Produits1`
-    FOREIGN KEY (`Produits_id`)
-    REFERENCES `theCookieTree`.`Produits` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE `categ` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `types` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `theCookieTree`.`droit`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`droit` ;
+--
+-- Structure de la table `commande`
+--
 
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`droit` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `permission` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+CREATE TABLE `commande` (
+  `id` int(11) NOT NULL,
+  `util` varchar(355) NOT NULL,
+  `mail` varchar(355) NOT NULL,
+  `produit` varchar(255) NOT NULL,
+  `quantite` varchar(255) NOT NULL,
+  `nomentreprise` varchar(120) NOT NULL,
+  `indications` text,
+  `dateCommande` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `theCookieTree`.`util`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`util` ;
+--
+-- Structure de la table `commande_has_produits`
+--
 
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`util` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `login` VARCHAR(60) NOT NULL,
-  `mdp` CHAR(64) NOT NULL,
-  `mail` VARCHAR(355) NOT NULL,
-  `nom` VARCHAR(120) NOT NULL,
-  `nomentreprise` VARCHAR(120) NOT NULL,
-  `prenom` VARCHAR(120) NOT NULL,
-  `droit_id` INT UNSIGNED NOT NULL,
-  `newsletter` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `login_UNIQUE` (`login` ASC),
-  INDEX `fk_util_droit1_idx` (`droit_id` ASC),
-  CONSTRAINT `fk_util_droit1`
-    FOREIGN KEY (`droit_id`)
-    REFERENCES `theCookieTree`.`droit` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE `commande_has_produits` (
+  `Commande_id` int(11) NOT NULL,
+  `Produits_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `theCookieTree`.`Commande`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`Commande` ;
+--
+-- Structure de la table `droit`
+--
 
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`Commande` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `util` VARCHAR(355) NOT NULL,
-  `mail` VARCHAR(355) NOT NULL,
-  `produit` INT UNSIGNED NOT NULL,
-  `quantite` INT UNSIGNED NOT NULL,
-  `nomentreprise` VARCHAR(120) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+CREATE TABLE `droit` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `permission` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `theCookieTree`.`Commande_has_Produits`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `theCookieTree`.`Commande_has_Produits` ;
+--
+-- Structure de la table `img`
+--
 
-CREATE TABLE IF NOT EXISTS `theCookieTree`.`Commande_has_Produits` (
-  `Commande_id` INT NOT NULL,
-  `Produits_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`Commande_id`, `Produits_id`),
-  INDEX `fk_Commande_has_Produits_Produits1_idx` (`Produits_id` ASC),
-  INDEX `fk_Commande_has_Produits_Commande1_idx` (`Commande_id` ASC),
-  CONSTRAINT `fk_Commande_has_Produits_Commande1`
-    FOREIGN KEY (`Commande_id`)
-    REFERENCES `theCookieTree`.`Commande` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Commande_has_Produits_Produits1`
-    FOREIGN KEY (`Produits_id`)
-    REFERENCES `theCookieTree`.`Produits` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE `img` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `url` varchar(555) NOT NULL,
+  `Produits_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+--
+-- Structure de la table `produits`
+--
+
+CREATE TABLE `produits` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `titre` varchar(100) NOT NULL,
+  `description` varchar(3000) NOT NULL,
+  `categ_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `util`
+--
+
+CREATE TABLE `util` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `login` varchar(60) NOT NULL,
+  `mdp` char(64) NOT NULL,
+  `mail` varchar(355) NOT NULL,
+  `nom` varchar(120) NOT NULL,
+  `nomentreprise` varchar(120) NOT NULL,
+  `prenom` varchar(120) NOT NULL,
+  `droit_id` int(10) UNSIGNED NOT NULL,
+  `token` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `categ`
+--
+ALTER TABLE `categ`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `commande`
+--
+ALTER TABLE `commande`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `commande_has_produits`
+--
+ALTER TABLE `commande_has_produits`
+  ADD PRIMARY KEY (`Commande_id`,`Produits_id`),
+  ADD KEY `fk_Commande_has_Produits_Produits1_idx` (`Produits_id`),
+  ADD KEY `fk_Commande_has_Produits_Commande1_idx` (`Commande_id`);
+
+--
+-- Index pour la table `droit`
+--
+ALTER TABLE `droit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `img`
+--
+ALTER TABLE `img`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_img_Produits1_idx` (`Produits_id`);
+
+--
+-- Index pour la table `produits`
+--
+ALTER TABLE `produits`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_Produits_categ1_idx` (`categ_id`);
+
+--
+-- Index pour la table `util`
+--
+ALTER TABLE `util`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login_UNIQUE` (`login`),
+  ADD KEY `fk_util_droit1_idx` (`droit_id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `categ`
+--
+ALTER TABLE `categ`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `commande`
+--
+ALTER TABLE `commande`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
+--
+-- AUTO_INCREMENT pour la table `droit`
+--
+ALTER TABLE `droit`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `img`
+--
+ALTER TABLE `img`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT pour la table `produits`
+--
+ALTER TABLE `produits`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT pour la table `util`
+--
+ALTER TABLE `util`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `commande_has_produits`
+--
+ALTER TABLE `commande_has_produits`
+  ADD CONSTRAINT `fk_Commande_has_Produits_Commande1` FOREIGN KEY (`Commande_id`) REFERENCES `commande` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Commande_has_Produits_Produits1` FOREIGN KEY (`Produits_id`) REFERENCES `produits` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `img`
+--
+ALTER TABLE `img`
+  ADD CONSTRAINT `fk_img_Produits1` FOREIGN KEY (`Produits_id`) REFERENCES `produits` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `produits`
+--
+ALTER TABLE `produits`
+  ADD CONSTRAINT `fk_Produits_categ1` FOREIGN KEY (`categ_id`) REFERENCES `categ` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `util`
+--
+ALTER TABLE `util`
+  ADD CONSTRAINT `fk_util_droit1` FOREIGN KEY (`droit_id`) REFERENCES `droit` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
