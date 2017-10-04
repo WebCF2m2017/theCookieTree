@@ -42,9 +42,8 @@
 							<li><a href="?galerie_vegan">Vegan</a></li>
 						</ul>
 					</li>
-					<li><a href="?contact">Contact</a></li>
-					<li><a href="?action=insert">Insertion</a></li>
 					<li><a href="?order">Vos réservations</a></li>
+					<li><a href="?action=insert">Insertion</a></li>
 					<li><a href="?action=deco">Deconnexion</a></li>
 				</ul>
 			</nav>

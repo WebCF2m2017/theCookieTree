@@ -67,9 +67,13 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
     }
     echo "<p class='textes'>{$gluten['description']}</p>";
 
-
-    echo "<a href='?id={$gluten['produits_id']}' onclick='bienajoute();' class='add addPanier'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
-
+     if(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 2){
+       echo "<a href='?id={$gluten['produits_id']}' onclick='bienajoute();' class='add addPanier'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
+    }elseif(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 1){
+     
+    }else{
+      echo "<a href='?connexion'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
+    }
     
   
 
@@ -139,8 +143,13 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
     }
     echo "<p class='textes'>{$vegan['description']}</p>";
 
-    echo "<a href='?id={$vegan['produits_id']}' class='add addPanier' onclick='bienajoute();'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
-
+    if(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 2){
+       echo "<a href='?id={$vegan['produits_id']}' onclick='bienajoute();' class='add addPanier'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
+    }elseif(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 1){
+     
+    }else{
+      echo "<a href='?connexion'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
+    }
 
 
     echo "</div>";

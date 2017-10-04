@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
     $login = htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
     $mdp = trim($_POST['mdp']);

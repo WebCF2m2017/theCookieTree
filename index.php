@@ -43,7 +43,29 @@ require 'pages/_header.php';
 </head>
 <body>
 	<?php 
-        require_once 'menu.php';
+ob_start();
+
+
+        $mobile = array('mobile', 'Mobile');
+
+            function isMobile(array $mobile){
+              foreach($mobile as $agent){
+
+                 if ( strpos($_SERVER['HTTP_USER_AGENT'], $agent) ){
+                     return true;
+                 }
+              }
+            }
+
+
+            //Now simply check then do redirect, like this
+            if ( isMobile($mobile) ){
+
+              require_once 'menu_mobile.php';
+
+            } else {
+              require_once 'menu.php';
+            }
 
 		if(empty($_GET)&&empty($_POST)){
 			require_once 'pages/accueil.php';

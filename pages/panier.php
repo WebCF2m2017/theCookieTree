@@ -58,6 +58,7 @@ if(!empty($_POST))
        $ids = array_keys($_SESSION['panier']);
        if(empty($ids)){
         $products = array();
+        echo "<h1>Vous n'avez pas de produits</h1>";
        }else{
        $products = $DB->query('SELECT * FROM produits WHERE id IN ('.implode(',',$ids).')');
        }
