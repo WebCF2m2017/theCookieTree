@@ -76,10 +76,6 @@ ob_start();
             require_once 'pages/_galerie.php';
 		}elseif(isset($_GET['entreprise'])){
 			require_once 'pages/entreprise.php';
-
-		}elseif(isset($_GET['produits'])){
-			require_once 'pages/produits.php';
-
 		}elseif(isset($_GET['commande'])){
 			require_once 'pages/panier.php';
 
