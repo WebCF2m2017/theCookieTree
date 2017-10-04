@@ -56,7 +56,7 @@ $recup_sql2 = mysqli_query($db, $sql2)or die(mysqli_error($db));
 while($gluten = mysqli_fetch_assoc($recup_sql)){
 
     echo " <section class='col-md-12'>";
-    echo "<div class='row' id='galerie'>";
+    
 
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
@@ -71,9 +71,9 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
        echo "<a href='?id={$gluten['produits_id']}' onclick='bienajoute();' class='add addPanier'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
     }elseif(isset($_SESSION['idrole']) && $_SESSION['idrole'] == 1){
      
-    }else{
-      echo "<a href='?connexion'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a> ";
-    }
+    }else{ ?>
+       <a href='?connexion'><h4 style='color:black;'><img width='40' heigt='40' src='images/add.png'/>Ajouter au panier</h4></a>
+   <?php } 
     
   
 
@@ -129,10 +129,9 @@ while($gluten = mysqli_fetch_assoc($recup_sql)){
 </div>
 <?php
 
-while($vegan = mysqli_fetch_assoc($recup_sql2)){
+while($vegan = mysqli_fetch_assoc($recup_sql2)){ 
 
     echo " <section class='col-md-12'>";
-    echo "<div class='row' id='galerie'>";
 
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
@@ -186,3 +185,4 @@ while($vegan = mysqli_fetch_assoc($recup_sql2)){
       echo "</section>";
   ?>
   </div>
+  

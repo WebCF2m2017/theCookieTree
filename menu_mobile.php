@@ -178,7 +178,7 @@
             <ul class="nav navbar-nav">
               <li class="active">
                 <a href="./" style="color:black;">
-                Acceuil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
+                Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
               </span>
             </a>
             </li>
@@ -248,7 +248,7 @@
             <ul class="nav navbar-nav">
               <li class="active">
                 <a href="./" style="color:black;">
-                Acceuil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
+                Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
               </span>
             </a>
             </li>
@@ -323,7 +323,7 @@
             <ul class="nav navbar-nav">
               <li class="active">
                 <a href="./" style="color:black;">
-                Acceuil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
+                Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home">
               </span>
             </a>
             </li>

@@ -42,7 +42,6 @@ $recup_sql = mysqli_query($db, $sql)or die(mysqli_error($db));
 while($gluten = mysqli_fetch_assoc($recup_sql)){
 
     echo " <section class='col-md-12'>";
-    echo "<div class='row' id='galerie'>";
 
     echo "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3'>";
 
