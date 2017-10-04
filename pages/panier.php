@@ -77,12 +77,12 @@ if(!empty($_POST))
 
         </label>  
           <div class="col-md-4">
-         <span class="quantity"><h3 id="del">Quantite : 
+         <span class="quantity"><h3 id="del">Quantité : 
 
            <?= $_SESSION['panier'][$product->id]; ?>
 
         </h3></span>
-         <a href='?delPanier=<?= $product->id; ?>' class="delPanier"><h3 id="del">Supprimé cette article.</h3></a>
+         <a href='?delPanier=<?= $product->id; ?>' class="delPanier"><h3 id="del">Supprimer cet article.</h3></a>
 
           </div>
       </div>
@@ -90,7 +90,7 @@ if(!empty($_POST))
 
       <!-- Textarea -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="textarea">Instructions</label>
+        <label class="col-md-4 control-label" for="textarea">Note</label>
         <div class="col-md-4">                     
           <textarea class="form-control" name="texte" id="textarea"> </textarea>
 
