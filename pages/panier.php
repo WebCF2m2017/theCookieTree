@@ -6,6 +6,7 @@ if(isset($_GET['del'])){
 
 
 
+
     if(isset( $_SESSION['id'])&& ctype_digit( $_SESSION['id'])){
 
         $quantites = $_SESSION['panier'];
@@ -89,7 +90,7 @@ if(!empty($_POST))
 
       <!-- Textarea -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="textarea">Instructions ou extas</label>
+        <label class="col-md-4 control-label" for="textarea">Instructions</label>
         <div class="col-md-4">                     
           <textarea class="form-control" name="texte" id="textarea"> </textarea>
 
@@ -97,7 +98,7 @@ if(!empty($_POST))
       </div>
       <!-- Button -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="singlebutton">Commander</label>
+        <label class="col-md-4 control-label" for="singlebutton"></label>
         <div class="col-md-4">
           <button type="submit" id="singlebutton"  class="btn btn-success">Réserver</button>
         </div>
