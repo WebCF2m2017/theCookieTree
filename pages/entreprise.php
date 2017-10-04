@@ -18,7 +18,7 @@
 				<p>Exit l'huile de palme, les gommes ou les additifs, nous sélectionnons les meilleurs ingrédients végétaux pour une meilleure santé.</p>
 				<h3 class="justify"><i class="fa fa-check-square-o" aria-hidden="true"></i>
 				Du local:</h3>
-				<p>Non nos bananes ne poussent pas (encore) en Belgique, mais nous faisons la.part belle au local avec les pommes, poires, carottes, lin,...</p>
+				<p>Non nos bananes ne poussent pas (encore) en Belgique, mais nous faisons la part belle au local avec les pommes, poires, carottes, lin,...</p>
 				<h3 class="justify"><i class="fa fa-check-square-o" aria-hidden="true"></i>
 				Du propre:</h3>
 				<p>Pour moins de pollution, les pâtisseries sont livrées à la force du mollet avec un vélo cargo un peu lourd, mais plus propre qu'un diesel.</p>
