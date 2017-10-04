@@ -1,5 +1,7 @@
 <?php
 session_start();
+ob_start();
+
 require_once '../pages/connect.php';
 require_once '../pages/fonction.php';
 

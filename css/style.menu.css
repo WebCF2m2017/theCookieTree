@@ -31,3 +31,6 @@
 .container{
 	padding: 0;
 }
+a{
+    z-index: 1;
+}

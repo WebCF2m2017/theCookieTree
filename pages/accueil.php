@@ -4,7 +4,6 @@ if(!strstr($_SERVER['PHP_SELF'],"index.php")){
 }
 ?>
 
-	<?php require_once 'menu.php';  ?>
 	<div class="container">
 		<div class="col-lg-12 col-offset-lg-12 col-md-12 col-sm-12 col-xs-12">
 
