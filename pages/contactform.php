@@ -11,8 +11,8 @@ if(isset($_POST['lemail'])&&
     $nom = trim($_POST['nom']);
         
         if($lemail){
-          //  $to ='marjolainepapin@gmail.com';
-            $to ='test@gmail.com';
+          //  
+            $to ='marjolainepapin@gmail.com';
             $subject = "Mail de votre site theCookieTree \r\n";
             $message = 'Nom: '. $nom . "\r\n";
             $message .= 'Prenom: ' .$prenom. "\r\n";
