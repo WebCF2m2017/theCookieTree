@@ -67,7 +67,7 @@ if(!isset($_SESSION['clef_de_session']) || $_SESSION['idrole'] != 1){
 <div class="form-group">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <label>Votre descriptif <span class="required">*</span></label><br />
-        <textarea name="description" id="field5" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12"></textarea><br />
+        <textarea name="description" id="field5" placeholder="Votre texte" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12"></textarea><br />
     </div>
     </div>
 

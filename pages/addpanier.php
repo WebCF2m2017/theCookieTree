@@ -6,7 +6,6 @@ $json = array('error => true');
 
 if(isset($_GET['id'])){
 	$product = $DB->query('SELECT id FROM produits WHERE id=:id', array('id' => $_GET['id']));
-	var_dump($product);
 		if(empty($product)){
 			$json['message'] = "Ce produit n'existe pas";
 		}

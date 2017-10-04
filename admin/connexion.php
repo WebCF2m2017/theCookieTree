@@ -19,7 +19,7 @@ if(isset($_POST['pseudo'])&&isset($_POST['mdp'])){
             $_SESSION['clef_de_session']=session_id();
             header("Location: ./"); 
         }else{ 
-            $erreur = "<center>Login et/ou mot de passe incorrecte(s)!</center>";
+            $erreur = "Login et/ou mot de passe incorrecte(s)!";
         }
     }else{
         header("Location: ?connexion");

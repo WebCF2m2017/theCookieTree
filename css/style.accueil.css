@@ -20,7 +20,6 @@ body{
 }
 p{
 	text-align: justify;
-<<<<<<< HEAD
 	font-size: 20px;
 }
 .quantity{
@@ -30,9 +29,9 @@ p{
 #del{
 	margin-top: 8%;
 	float:right;
+	color:black;
+	font-size:15px;
 }
 .prodname{
-=======
->>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
 	font-size: 18px;
 }
