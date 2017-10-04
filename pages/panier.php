@@ -4,7 +4,6 @@ if(isset($_GET['del'])){
   $panier->del($_GET['del']);
 }
 
-var_dump($_SESSION);
 
 
     if(isset( $_SESSION['id'])&& ctype_digit( $_SESSION['id'])){
@@ -34,10 +33,12 @@ if(!empty($_POST))
 
   foreach ($_SESSION['panier'] as $key => $value) {
 
-    echo "Gateau $key => $value"; 
-
     $sql = "INSERT INTO commande (util, mail, produit, quantite, nomentreprise, indications) VALUES ('$utilActive','$emailUser','$key','$value', '$nomentreprise', '$texte')";
     $insertion = mysqli_query($db,$sql);
+  }
+  if($insertion){
+    $_SESSION['panier']=array();
+    header("Location: ?order");
   }
 }
 }
@@ -93,39 +94,16 @@ if(!empty($_POST))
 
         </div>
       </div>
-
-      <!-- Multiple Checkboxes -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="checkboxes">Conditions Générales de Vente</label>
-        <div class="col-md-4">
-        <div class="checkbox">
-          <label for="checkboxes-0">
-            
-            <input type="checkbox" name="conditions" id="checkboxes-0" value="1">
-
-            Je suis d'accord.
-
-          </label>
-        </div>
-        </div>
-      </div>
-
-
       <!-- Button -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="singlebutton">Commander</label>
         <div class="col-md-4">
-          <button type="submit" id="singlebutton"  class="btn btn-success">Commander</button>
+          <button type="submit" id="singlebutton"  class="btn btn-success">Réserver</button>
         </div>
       </div>
       </fieldset>
       </form>
 
-      <?php
-    if(isset($mailsent)){
-        echo '<h2>' . $mailsent . '</h2>';
-    }
-    ?>
-
+ 
 
    </div>

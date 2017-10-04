@@ -14,6 +14,7 @@
 				<li>
 					<a data-toggle="dropdown" href="?galerie_gluten">Produits <b class="caret"></b></a>
 					<ul class="dropdown-menu">
+						<li><a href="?galerie_tout">Tous les produits</a></li>
 						<li><a href="?galerie_gluten">Au-delà du blé</a></li>
 						<li><a href="?galerie_vegan">Vegan</a></li>
 					</ul>
@@ -36,13 +37,14 @@
 					<li>
 						<a data-toggle="dropdown" href="?galerie_gluten">Produits <b class="caret"></b></a>
 						<ul class="dropdown-menu">
+							<li><a href="?galerie_tout">Tous les produits</a></li>
 							<li><a href="?galerie_gluten">Au-delà du blé</a></li>
 							<li><a href="?galerie_vegan">Vegan</a></li>
 						</ul>
 					</li>
 					<li><a href="?contact">Contact</a></li>
 					<li><a href="?action=insert">Insertion</a></li>
-					<li><a href="?order">Commandes</a></li>
+					<li><a href="?order">Vos réservations</a></li>
 					<li><a href="?action=deco">Deconnexion</a></li>
 				</ul>
 			</nav>
@@ -58,14 +60,15 @@
 					<li>
 						<a data-toggle="dropdown" href="?produits">Produits <b class="caret"></b></a>
 						<ul class="dropdown-menu">
+							<li><a href="?galerie_tout">Tous les produits</a></li>
 							<li><a href="?galerie_gluten">Au-delà du blé</a></li>
 							<li><a href="?galerie_vegan">Vegan</a></li>
 						</ul>
 					</li>
 					<li><a href="?contact">Contact</a></li>
-					<li><a href="?commande">Commande</a>
-					<li><a href="?order">Commandes</a></li>
-					<li><a href="?action=deco">Deconnexion</a></li>
+					<li><a href="?commande">Réservation</a>
+					<li><a href="?order">Vos réservations</a></li>
+					<li><a href="?action=deco">Déconnexion</a></li>
 				</ul>
 			</nav>
 		</div>	

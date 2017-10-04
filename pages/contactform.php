@@ -43,7 +43,7 @@ if(isset($_POST['lemail'])&&
 <div class="container"> 
 <div class="row">
 
-<form action="" method="POST" name="envoiemail" class="col-lg-6 col-lg-offset-2 form-horizontal ">
+<form action="" method="POST" name="envoiemail" class="col-lg-8 col-lg-offset-2 form-horizontal ">
 
 <div class="form-group">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -82,15 +82,27 @@ if(isset($_POST['lemail'])&&
 </div>
 </div>
 </form>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-<aside class="col-lg-2 col-lg-offset-1 ">
-        <address>
-           <p>Pour me contacter :</p>
+        <address style="text-align: center;">
+           <h3>Pour me contacter :</h3>
            <strong>Marjolaine Papin</strong><br>
-           +32 (0) 470 82 74 95<br>
-           marjolainepapin@gmail.com
+           <strong>+32 (0) 470 82 74 95</strong><br>
+           <strong>marjolainepapin@gmail.com</strong><br>
+
+             <a class="btn btn-facebook btn-primary btn-info" href="https://www.facebook.com/TheOrganicCookieTree" target="_blank">
+                <span class="fa fa-facebook"> Facebook</span>
+              </a> 
+
+              <a class="btn btn-instagram btn-primary btn-info" href="https://www.instagram.com/thecookietreebrussels" target="_blank">
+                <span class="fa fa-instagram"> Instagram</span>
+              </a>
+
+        
+
         </address>
-</aside>
+        
+</div>
 </div>
 
 </div>

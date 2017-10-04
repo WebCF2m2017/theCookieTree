@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
-//ini_set("SMTP", "smtp.numericable.be");
-=======
 
->>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
 if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !empty($_POST['email']) &&!empty($_POST['nom']) &&!empty($_POST['prenom'])){
     if($_POST['mdp'] == $_POST['mdp2']){
         $pseudo = htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
@@ -28,19 +24,11 @@ if(!empty($_POST['pseudo'])&&!empty($_POST['mdp']) &&!empty($_POST['mdp2'])&& !e
             $entreprise = "/";
         }
 
-<<<<<<< HEAD
         $insert = "INSERT INTO util (login,mdp,mail,nomentreprise,nom,prenom,droit_id) VALUES ('$pseudo','$mdp','$email','$entreprise','$nom','$prenom',2)";
         $on_insert = mysqli_query($db,$insert);
         
         if($on_insert){
-            $expe = "q588404@mvrht.net";
-=======
-        $insert = "INSERT INTO util (login,mdp,mail,nom,nomentreprise,prenom,droit_id) VALUES ('$pseudo','$mdp','$email','$nom','$entreprise','$prenom',1)";
-        $on_insert = mysqli_query($db,$insert);
-        
-        if($on_insert){
             $expe = "tqh05558@loaoa.com";
->>>>>>> 5690852586e0602e94c1cc8db4bd8ef042e8d91f
             $to = $email;
             $subject = 'Inscription theCookieTree';
             $message = 'Merci de vous être inscrit chez theCookieTree. Nous vous souhaitons une agréable visite! Votre pseudo est '.$pseudo.'.';

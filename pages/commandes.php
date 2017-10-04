@@ -36,9 +36,6 @@ if($_SESSION['idrole']==1){
 
 
 
-var_dump($_SESSION['idrole']);
-var_dump($_SESSION['id']);
-
 
 
 
