@@ -39,6 +39,7 @@ require 'pages/_header.php';
         }
 
     </style>
+
 </head>
 <body>
 	<?php 
@@ -49,7 +50,8 @@ require 'pages/_header.php';
 			
 		}elseif(isset($_GET['contact'])){
 			require_once 'pages/contactform.php';
-
+        }elseif(isset($_GET['galerie_tout'])){
+            require_once 'pages/_galerie.php';
 		}elseif(isset($_GET['entreprise'])){
 			require_once 'pages/entreprise.php';
 
